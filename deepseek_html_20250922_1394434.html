@@ -1,0 +1,1989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawnscape | California's Trusted Lawn Care Experts</title>
+    <meta name="description" content="Premium lawn care services in Pasadena, Riverside, and Los Angeles. Licensed, eco-friendly, and reliable. Get your free estimate today!">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lawnscape.com/">
+    <meta property="og:title" content="Lawnscape | California's Trusted Lawn Care Experts">
+    <meta property="og:description" content="Premium lawn care services in Pasadena, Riverside, and Los Angeles. Licensed, eco-friendly, and reliable. Get your free estimate today!">
+    <meta property="og:image" content="https://lawnscape.com/images/lawn-care-bg.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://lawnscape.com/">
+    <meta property="twitter:title" content="Lawnscape | California's Trusted Lawn Care Experts">
+    <meta property="twitter:description" content="Premium lawn care services in Pasadena, Riverside, and Los Angeles. Licensed, eco-friendly, and reliable. Get your free estimate today!">
+    <meta property="twitter:image" content="https://lawnscape.com/images/lawn-care-bg.jpg">
+    
+    <!-- Preload hero image for LCP -->
+    <link rel="preload" href="images/lawn-care-bg.jpg" as="image">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'lawnscape-green': '#0b3d26',
+                        'lawnscape-dark': '#1a1a1a',
+                        'lawnscape-light': '#f5f5f5',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                },
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Custom CSS for animations and accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Scroll animations */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Focus styles for accessibility */
+        *:focus {
+            outline: 3px solid #4ade80;
+            outline-offset: 2px;
+        }
+        
+        /* Skip to content link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #0b3d26;
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #0b3d26;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #052014;
+        }
+        
+        /* Skeleton loader */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="text-2xl font-bold text-lawnscape-green">Lawnscape</div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-6" aria-label="Main navigation">
+                    <a href="#home" class="text-gray-700 hover:text-lawnscape-green transition">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-lawnscape-green transition">About</a>
+                    <a href="#services" class="text-gray-700 hover:text-lawnscape-green transition">Services</a>
+                    <a href="#pricing" class="text-gray-700 hover:text-lawnscape-green transition">Pricing</a>
+                    <a href="#offers" class="text-gray-700 hover:text-lawnscape-green transition">Offers</a>
+                    <a href="#portfolio" class="text-gray-700 hover:text-lawnscape-green transition">Portfolio</a>
+                    <a href="#reviews" class="text-gray-700 hover:text-lawnscape-green transition">Reviews</a>
+                    <a href="#faq" class="text-gray-700 hover:text-lawnscape-green transition">FAQ</a>
+                    <a href="#contact" class="text-gray-700 hover:text-lawnscape-green transition">Contact</a>
+                </nav>
+                
+                <!-- Desktop CTAs -->
+                <div class="hidden md:flex space-x-4">
+                    <a href="tel:(555)123-4567" class="px-4 py-2 bg-lawnscape-green text-white rounded-lg hover:bg-green-800 transition" onclick="gtag('event', 'call_click', {'event_category': 'engagement'});">Call Now</a>
+                    <a href="#booking-form" class="px-4 py-2 bg-lawnscape-dark text-white rounded-lg hover:bg-gray-900 transition">Get Free Estimate</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <nav id="mobile-menu" class="hidden md:hidden mt-4 pb-4" aria-label="Mobile navigation">
+                <div class="flex flex-col space-y-3">
+                    <a href="#home" class="text-gray-700 hover:text-lawnscape-green transition">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-lawnscape-green transition">About</a>
+                    <a href="#services" class="text-gray-700 hover:text-lawnscape-green transition">Services</a>
+                    <a href="#pricing" class="text-gray-700 hover:text-lawnscape-green transition">Pricing</a>
+                    <a href="#offers" class="text-gray-700 hover:text-lawnscape-green transition">Offers</a>
+                    <a href="#portfolio" class="text-gray-700 hover:text-lawnscape-green transition">Portfolio</a>
+                    <a href="#reviews" class="text-gray-700 hover:text-lawnscape-green transition">Reviews</a>
+                    <a href="#faq" class="text-gray-700 hover:text-lawnscape-green transition">FAQ</a>
+                    <a href="#contact" class="text-gray-700 hover:text-lawnscape-green transition">Contact</a>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="tel:(555)123-4567" class="px-4 py-2 bg-lawnscape-green text-white rounded-lg hover:bg-green-800 transition flex-1 text-center" onclick="gtag('event', 'call_click', {'event_category': 'engagement'});">Call Now</a>
+                        <a href="#booking-form" class="px-4 py-2 bg-lawnscape-dark text-white rounded-lg hover:bg-gray-900 transition flex-1 text-center">Get Free Estimate</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Sticky Mobile Bottom Bar -->
+    <div class="fixed bottom-0 left-0 right-0 bg-lawnscape-green text-white p-3 flex justify-around z-50 md:hidden shadow-lg">
+        <a href="tel:(555)123-4567" class="flex flex-col items-center" onclick="gtag('event', 'call_click', {'event_category': 'engagement'});">
+            <i class="fas fa-phone text-xl"></i>
+            <span class="text-xs mt-1">Call</span>
+        </a>
+        <button id="mobile-estimate-btn" class="flex flex-col items-center" onclick="openQuickBooking();">
+            <i class="fas fa-calendar-check text-xl"></i>
+            <span class="text-xs mt-1">Free Estimate</span>
+        </button>
+    </div>
+    
+    <!-- Floating Reviews Widget -->
+    <div id="reviews-widget" class="fixed right-4 bottom-20 bg-white rounded-xl shadow-lg p-4 max-w-xs z-40 transition-all duration-300 transform translate-x-full">
+        <button id="reviews-toggle" class="absolute -left-10 top-1/2 transform -translate-y-1/2 bg-lawnscape-green text-white rounded-l-lg p-2" aria-label="Toggle reviews">
+            <i class="fas fa-star"></i>
+        </button>
+        <div class="flex items-center mb-2">
+            <div class="text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <span class="ml-2 font-bold">4.9/5</span>
+        </div>
+        <p class="text-sm text-gray-600 italic">"Lawnscape transformed my front yard in 2 days. Highly recommended!" - John M., Pasadena</p>
+        <a href="#reviews" class="text-lawnscape-green text-sm mt-2 inline-block">Read all reviews</a>
+    </div>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="relative bg-lawnscape-green text-white">
+            <div class="absolute inset-0">
+                <picture>
+                    <img src="images/lawn-care-bg.jpg" alt="Beautiful lawn care service" class="w-full h-full object-cover opacity-30">
+                </picture>
+            </div>
+            <div class="container mx-auto px-4 py-16 md:py-24 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <!-- Left Column -->
+                    <div class="scroll-animate">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">California's Trusted Lawn Care Experts</h1>
+                        <p class="text-xl md:text-2xl mb-6 text-green-100">Licensed • Eco-Friendly • On-Time • Local Pros</p>
+                        
+                        <div class="flex flex-wrap gap-4 mb-8">
+                            <div class="flex items-center bg-white bg-opacity-20 px-4 py-2 rounded-lg">
+                                <i class="fas fa-star text-yellow-400 mr-2"></i>
+                                <span>⭐⭐⭐⭐⭐ Google Reviews</span>
+                            </div>
+                            <div class="flex items-center bg-white bg-opacity-20 px-4 py-2 rounded-lg">
+                                <i class="fas fa-shield-alt mr-2"></i>
+                                <span>Licensed & Insured</span>
+                            </div>
+                            <div class="flex items-center bg-white bg-opacity-20 px-4 py-2 rounded-lg">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span>Same-Day Estimate</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#booking-form" class="px-6 py-3 bg-white text-lawnscape-green font-bold rounded-lg hover:bg-green-50 transition text-center">Get Your Free Estimate</a>
+                            <a href="tel:(555)123-4567" class="px-6 py-3 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-lawnscape-green transition text-center" onclick="gtag('event', 'call_click', {'event_category': 'engagement'});">Call Now</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column (Hero Form) -->
+                    <div class="bg-white rounded-2xl shadow-xl p-6 text-gray-800 scroll-animate">
+                        <h2 class="text-2xl font-bold mb-4 text-lawnscape-green">Get Your Free Estimate</h2>
+                        <form id="hero-form" class="space-y-4">
+                            <div>
+                                <label for="hero-name" class="block text-sm font-medium mb-1">Name</label>
+                                <input type="text" id="hero-name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lawnscape-green focus:border-lawnscape-green" aria-required="true">
+                            </div>
+                            
+                            <div>
+                                <label for="hero-phone" class="block text-sm font-medium mb-1">Phone</label>
+                                <input type="tel" id="hero-phone" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lawnscape-green focus:border-lawnscape-green" aria-required="true">
+                            </div>
+                            
+                            <div>
+                                <label for="hero-service" class="block text-sm font-medium mb-1">Service</label>
+                                <select id="hero-service" name="service" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lawnscape-green focus:border-lawnscape-green" aria-required="true">
+                                    <option value="">Select a service</option>
+                                    <option value="lawn-mowing">Lawn Mowing</option>
+                                    <option value="edging-trimming">Edging & Trimming</option>
+                                    <option value="weed-control">Weed Control</option>
+                                    <option value="fertilization">Fertilization</option>
+                                    <option value="seasonal-cleanup">Seasonal Cleanup</option>
+                                    <option value="aeration">Aeration</option>
+                                    <option value="commercial">Commercial Property Maintenance</option>
+                                    <option value="landscaping">Landscaping Enhancements</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="hero-address" class="block text-sm font-medium mb-1">Address</label>
+                                <input type="text" id="hero-address" name="address" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lawnscape-green focus:border-lawnscape-green" aria-required="true">
+                            </div>
+                            
+                            <div>
+                                <label for="hero-zip" class="block text-sm font-medium mb-1">Zip Code</label>
+                                <input type="text" id="hero-zip" name="zip" pattern="[0-9]{5}" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lawnscape-green focus:border-lawnscape-green" aria-required="true">
+                            </div>
+                            
+                            <div>
+                                <label for="hero-date" class="block text-sm font-medium mb-1">Preferred Date</label>
+                                <input type="date" id="hero-date" name="date" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lawnscape-green focus:border-lawnscape-green" aria-required="true">
+                            </div>
+                            
+                            <div class="text-xs text-gray-600">
+                                <p>We'll reply within 24 hrs — avg. response time: 2 hours</p>
+                                <p>Your information is secure and never shared.</p>
+                            </div>
+                            
+                            <button type="submit" class="w-full py-3 bg-lawnscape-green text-white font-bold rounded-lg hover:bg-green-800 transition">Submit Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quick Booking Drawer -->
+        <div id="quick-booking" class="fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-2xl p-6 transform translate-y-full transition-transform duration-300 z-50 max-h-[90vh] overflow-y-auto">
+            <button id="close-booking" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700" aria-label="Close booking drawer">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            
+            <div class="max-w-md mx-auto">
+                <h2 class="text-2xl font-bold mb-4 text-lawnscape-green">Quick Booking</h2>
+                <form id="quick-booking-form" class="space-y-4">
+                    <div>
+                        <label for="quick-zip" class="block text-sm font-medium mb-1">Zip Code</label>
+                        <input type="text" id="quick-zip" name="zip" pattern="[0-9]{5}" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lawnscape-green focus:border-lawnscape-green" aria-required="true" onchange="gtag('event', 'quick_book_zip', {'event_category': 'engagement'});">
+                    </div>
+                    
+                    <div>
+                        <label for="quick-service" class="block text-sm font-medium mb-1">Service</label>
+                        <select id="quick-service" name="service" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lawnscape-green focus:border-lawnscape-green" aria-required="true">
+                            <option value="">Select a service</option>
+                            <option value="lawn-mowing">Lawn Mowing</option>
+                            <option value="edging-trimming">Edging & Trimming</option>
+                            <option value="weed-control">Weed Control</option>
+                            <option value="fertilization">Fertilization</option>
+                            <option value="seasonal-cleanup">Seasonal Cleanup</option>
+                            <option value="aeration">Aeration</option>
+                            <option value="commercial">Commercial Property Maintenance</option>
+                            <option value="landscaping">Landscaping Enhancements</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="quick-date" class="block text-sm font-medium mb-1">Preferred Date</label>
+                        <input type="date" id="quick-date" name="date" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lawnscape-green focus:border-lawnscape-green" aria-required="true">
+                    </div>
+                    
+                    <div class="text-xs text-gray-600">
+                        <p>We'll reply within 24 hrs — avg. response time: 2 hours</p>
+                        <p>Your information is secure and never shared.</p>
+                    </div>
+                    
+                    <button type="submit" class="w-full py-3 bg-lawnscape-green text-white font-bold rounded-lg hover:bg-green-800 transition" onclick="gtag('event', 'quick_book_confirm', {'event_category': 'engagement'});">Confirm Booking</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- About Us Section -->
+        <section id="about" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="scroll-animate">
+                        <picture>
+                            <img src="images/about-image.jpg" alt="Lawnscape team working on a lawn" class="rounded-2xl shadow-lg w-full">
+                        </picture>
+                    </div>
+                    
+                    <div class="scroll-animate">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-lawnscape-green">About Lawnscape</h2>
+                        <p class="text-lg mb-6">Founded in 2015 in Pasadena, Lawnscape grew from a family-run passion for beautiful outdoor spaces to a trusted California partner serving Pasadena, Riverside, LA, and nearby communities.</p>
+                        
+                        <div class="mb-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-lawnscape-green flex items-center justify-center text-white mr-4">
+                                    <i class="fas fa-calendar"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">2015</h3>
+                                    <p>Founded in Pasadena</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-lawnscape-green flex items-center justify-center text-white mr-4">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">1,200+</h3>
+                                    <p>Happy Clients</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 rounded-full bg-lawnscape-green flex items-center justify-center text-white mr-4">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">98%</h3>
+                                    <p>Client Retention Rate</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-4">
+                            <div class="bg-white p-3 rounded-lg shadow">
+                                <div class="text-yellow-400 text-xl mb-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="text-sm">Google Reviews</p>
+                            </div>
+                            
+                            <div class="bg-white p-3 rounded-lg shadow">
+                                <div class="text-lawnscape-green text-xl mb-1">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <p class="text-sm">Insured</p>
+                            </div>
+                            
+                            <div class="bg-white p-3 rounded-lg shadow">
+                                <div class="text-lawnscape-green text-xl mb-1">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <p class="text-sm">Google Guaranteed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Grid -->
+        <section id="services" class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12 scroll-animate">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-lawnscape-green">Our Premium Services</h2>
+                    <p class="text-lg max-w-2xl mx-auto">Professional lawn care services tailored to your needs in Pasadena, Riverside, and Los Angeles.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Service Card 1 -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition scroll-animate">
+                        <picture>
+                            
+                            <img src="images/lawncare.jpg" alt="Lawn mowing service" class="w-full h-48 object-cover">
+                        </picture>
+                        <div class="p-5">
+                            <h3 class="text-xl font-bold mb-2 text-lawnscape-green">Lawn Mowing</h3>
+                            <p class="text-gray-600 mb-4">Professional lawn mowing services for Pasadena homes that keep your grass healthy and perfectly trimmed all season long.</p>
+                            <a href="#service-lawn-mowing" class="text-lawnscape-green font-medium hover:underline">Learn more <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Card 2 -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition scroll-animate">
+                        <picture>
+                            
+                            <img src="images/edging-trimming.jpg" alt="Edging and trimming service" class="w-full h-48 object-cover">
+                        </picture>
+                        <div class="p-5">
+                            <h3 class="text-xl font-bold mb-2 text-lawnscape-green">Edging & Trimming</h3>
+                            <p class="text-gray-600 mb-4">Precision edging and trimming services that create clean lines and enhance your Riverside property's curb appeal.</p>
+                            <a href="#service-edging-trimming" class="text-lawnscape-green font-medium hover:underline">Learn more <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Card 3 -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition scroll-animate">
+                        <picture>
+                           
+                            <img src="images/weed-control.jpg" alt="Weed control service" class="w-full h-48 object-cover">
+                        </picture>
+                        <div class="p-5">
+                            <h3 class="text-xl font-bold mb-2 text-lawnscape-green">Weed Control</h3>
+                            <p class="text-gray-600 mb-4">Effective weed control solutions for Los Angeles lawns that eliminate unwanted plants without harming your grass.</p>
+                            <a href="#service-weed-control" class="text-lawnscape-green font-medium hover:underline">Learn more <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Card 4 -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition scroll-animate">
+                        <picture>
+                           
+                            <img src="images/fertilization.jpg" alt="Fertilization service" class="w-full h-48 object-cover">
+                        </picture>
+                        <div class="p-5">
+                            <h3 class="text-xl font-bold mb-2 text-lawnscape-green">Fertilization</h3>
+                            <p class="text-gray-600 mb-4">Custom fertilization programs for Pasadena lawns that promote healthy growth and vibrant green color year-round.</p>
+                            <a href="#service-fertilization" class="text-lawnscape-green font-medium hover:underline">Learn more <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Card 5 -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition scroll-animate">
+                        <picture>
+                            <img src="images/seasonal-cleanup.jpg" alt="Seasonal cleanup service" class="w-full h-48 object-cover">
+                        </picture>
+                        <div class="p-5">
+                            <h3 class="text-xl font-bold mb-2 text-lawnscape-green">Seasonal Cleanup</h3>
+                            <p class="text-gray-600 mb-4">Comprehensive seasonal cleanup services for Riverside properties that prepare your lawn for changing weather conditions.</p>
+                            <a href="#service-seasonal-cleanup" class="text-lawnscape-green font-medium hover:underline">Learn more <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Card 6 -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition scroll-animate">
+                        <picture>
+                            <img src="images/aeration.jpg" alt="Aeration service" class="w-full h-48 object-cover">
+                        </picture>
+                        <div class="p-5">
+                            <h3 class="text-xl font-bold mb-2 text-lawnscape-green">Aeration</h3>
+                            <p class="text-gray-600 mb-4">Professional lawn aeration services for Los Angeles homes that improve soil health and promote stronger root growth.</p>
+                            <a href="#service-aeration" class="text-lawnscape-green font-medium hover:underline">Learn more <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Card 7 -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition scroll-animate">
+                        <picture>
+                            <img src="images/commercial.jpg" alt="Commercial property maintenance" class="w-full h-48 object-cover">
+                        </picture>
+                        <div class="p-5">
+                            <h3 class="text-xl font-bold mb-2 text-lawnscape-green">Commercial Property Maintenance</h3>
+                            <p class="text-gray-600 mb-4">Reliable commercial lawn maintenance services for Pasadena businesses that create professional first impressions.</p>
+                            <a href="#service-commercial" class="text-lawnscape-green font-medium hover:underline">Learn more <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Card 8 -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition scroll-animate">
+                        <picture>
+                            <img src="images/landscaping.jpg" alt="Landscaping enhancements" class="w-full h-48 object-cover">
+                        </picture>
+                        <div class="p-5">
+                            <h3 class="text-xl font-bold mb-2 text-lawnscape-green">Landscaping Enhancements</h3>
+                            <p class="text-gray-600 mb-4">Creative landscaping solutions for Riverside properties that transform outdoor spaces into beautiful retreats.</p>
+                            <a href="#service-landscaping" class="text-lawnscape-green font-medium hover:underline">Learn more <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12 scroll-animate">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-lawnscape-green">Transparent Pricing</h2>
+                    <p class="text-lg max-w-2xl mx-auto">Affordable lawn care plans for every budget in Pasadena, Riverside, and Los Angeles.</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg p-6 mb-8 scroll-animate">
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="border-b">
+                                    <th class="text-left py-3 px-4">Property Size</th>
+                                    <th class="text-center py-3 px-4">Basic</th>
+                                    <th class="text-center py-3 px-4">Standard</th>
+                                    <th class="text-center py-3 px-4">Premium</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="py-3 px-4 font-medium">Small (&lt;0.25ac)</td>
+                                    <td class="text-center py-3 px-4">$35-45</td>
+                                    <td class="text-center py-3 px-4">$45-55</td>
+                                    <td class="text-center py-3 px-4">$55-65</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="py-3 px-4 font-medium">Medium (0.25–0.5ac)</td>
+                                    <td class="text-center py-3 px-4">$45-60</td>
+                                    <td class="text-center py-3 px-4">$60-75</td>
+                                    <td class="text-center py-3 px-4">$75-90</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="py-3 px-4 font-medium">Large (0.5–1ac)</td>
+                                    <td class="text-center py-3 px-4">$60-80</td>
+                                    <td class="text-center py-3 px-4">$80-100</td>
+                                    <td class="text-center py-3 px-4">$100-120</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-4 font-medium">Custom (&gt;1ac)</td>
+                                    <td class="text-center py-3 px-4" colspan="3">Contact for quote</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <p class="text-sm text-gray-600 mt-4 text-center">Final quote depends on lawn condition, slope, and add-ons.</p>
+                </div>
+                
+                <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-6 scroll-animate">
+                    <h3 class="text-xl font-bold mb-4 text-lawnscape-green text-center">Price Calculator</h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label for="calc-size" class="block text-sm font-medium mb-1">Property Size</label>
+                            <select id="calc-size" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lawnscape-green focus:border-lawnscape-green">
+                                <option value="small">Small (&lt;0.25ac)</option>
+                                <option value="medium">Medium (0.25–0.5ac)</option>
+                                <option value="large">Large (0.5–1ac)</option>
+                                <option value="custom">Custom (&gt;1ac)</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="calc-frequency" class="block text-sm font-medium mb-1">Frequency</label>
+                            <select id="calc-frequency" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lawnscape-green focus:border-lawnscape-green">
+                                <option value="weekly">Weekly</option>
+                                <option value="biweekly">Bi-weekly</option>
+                                <option value="monthly">Monthly</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="calc-plan" class="block text-sm font-medium mb-1">Service Plan</label>
+                            <select id="calc-plan" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lawnscape-green focus:border-lawnscape-green">
+                                <option value="basic">Basic</option>
+                                <option value="standard">Standard</option>
+                                <option value="premium">Premium</option>
+                            </select>
+                        </div>
+                        
+                        <div class="flex items-center justify-center space-x-4">
+                            <span class="text-sm">One-time</span>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="calc-subscription" class="sr-only peer">
+                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-lawnscape-green"></div>
+                            </label>
+                            <span class="text-sm">Subscription</span>
+                        </div>
+                        
+                        <div class="bg-lawnscape-green text-white rounded-lg p-4 text-center">
+                            <p class="text-sm">Estimated Price Range</p>
+                            <p id="calc-result" class="text-2xl font-bold">$45-55</p>
+                            <p id="calc-frequency-text" class="text-sm">per service</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Limited-Time Offers -->
+        <section id="offers" class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12 scroll-animate">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-lawnscape-green">Special Discounts — Limited Availability</h2>
+                    <p class="text-lg max-w-2xl mx-auto">Take advantage of these exclusive offers for lawn care services in Pasadena, Riverside, and Los Angeles.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Offer 1 -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-lawnscape-green scroll-animate">
+                        <div class="bg-lawnscape-green text-white p-4">
+                            <h3 class="text-xl font-bold">$50 Referral Credit</h3>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-gray-600 mb-4">Refer a friend and both of you receive $50 credit toward your next lawn care service.</p>
+                            <div class="flex items-center text-sm text-gray-500 mb-4">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span>Valid through Sep 30, 2025</span>
+                            </div>
+                            <button class="w-full py-2 bg-lawnscape-green text-white rounded-lg hover:bg-green-800 transition" onclick="redeemOffer('referral'); gtag('event', 'offer_redeem', {'event_category': 'engagement', 'event_label': 'referral'});">Redeem Offer</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Offer 2 -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-lawnscape-green scroll-animate">
+                        <div class="bg-lawnscape-green text-white p-4">
+                            <h3 class="text-xl font-bold">$10 Off Tick & Flea Control</h3>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-gray-600 mb-4">Protect your family and pets with our effective tick and flea control treatment at a discounted price.</p>
+                            <div class="flex items-center text-sm text-gray-500 mb-4">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span>Valid through Sep 30, 2025</span>
+                            </div>
+                            <button class="w-full py-2 bg-lawnscape-green text-white rounded-lg hover:bg-green-800 transition" onclick="redeemOffer('tick-flea'); gtag('event', 'offer_redeem', {'event_category': 'engagement', 'event_label': 'tick-flea'});">Redeem Offer</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Offer 3 -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-lawnscape-green scroll-animate">
+                        <div class="bg-lawnscape-green text-white p-4">
+                            <h3 class="text-xl font-bold">First Lawn Mow Free</h3>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-gray-600 mb-4">New customers receive their first lawn mowing service completely free with no obligation.</p>
+                            <div class="flex items-center text-sm text-gray-500 mb-4">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span>Valid this month (<span id="current-month"></span>)</span>
+                            </div>
+                            <button class="w-full py-2 bg-lawnscape-green text-white rounded-lg hover:bg-green-800 transition" onclick="redeemOffer('first-mow'); gtag('event', 'offer_redeem', {'event_category': 'engagement', 'event_label': 'first-mow'});">Redeem Offer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials & Social Proof -->
+        <section id="reviews" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12 scroll-animate">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-lawnscape-green">What Our Clients Say</h2>
+                    <p class="text-lg max-w-2xl mx-auto">Don't just take our word for it - hear from homeowners in Pasadena, Riverside, and Los Angeles.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-white rounded-2xl shadow-lg p-6 scroll-animate">
+                        <div class="text-yellow-400 mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 mb-4">"Lawnscape transformed my front yard in 2 days. Highly recommended!"</p>
+                        <p class="font-medium">John M., Pasadena</p>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white rounded-2xl shadow-lg p-6 scroll-animate">
+                        <div class="text-yellow-400 mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 mb-4">"Reliable, professional, and affordable. My lawn has never looked better!"</p>
+                        <p class="font-medium">Sarah T., Riverside</p>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="bg-white rounded-2xl shadow-lg p-6 scroll-animate">
+                        <div class="text-yellow-400 mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 mb-4">"The team at Lawnscape is amazing. They show up on time and do exceptional work."</p>
+                        <p class="font-medium">Michael R., Los Angeles</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg p-6 max-w-4xl mx-auto scroll-animate">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="mb-6 md:mb-0 md:mr-8">
+                            <div class="text-5xl font-bold text-lawnscape-green mb-2">4.9</div>
+                            <div class="text-yellow-400 text-2xl mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-gray-600">Based on 324 Google Reviews</p>
+                        </div>
+                        
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-4 text-lawnscape-green">Google Reviews Snapshot</h3>
+                            <div class="space-y-2">
+                                <div class="flex items-center">
+                                    <span class="w-24 text-sm">5 stars</span>
+                                    <div class="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
+                                        <div class="h-full bg-yellow-400" style="width: 92%"></div>
+                                    </div>
+                                    <span class="w-10 text-right text-sm">92%</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-24 text-sm">4 stars</span>
+                                    <div class="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
+                                        <div class="h-full bg-yellow-400" style="width: 6%"></div>
+                                    </div>
+                                    <span class="w-10 text-right text-sm">6%</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-24 text-sm">3 stars</span>
+                                    <div class="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
+                                        <div class="h-full bg-yellow-400" style="width: 1%"></div>
+                                    </div>
+                                    <span class="w-10 text-right text-sm">1%</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-24 text-sm">2 stars</span>
+                                    <div class="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
+                                        <div class="h-full bg-yellow-400" style="width: 1%"></div>
+                                    </div>
+                                    <span class="w-10 text-right text-sm">1%</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-24 text-sm">1 star</span>
+                                    <div class="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
+                                        <div class="h-full bg-yellow-400" style="width: 0%"></div>
+                                    </div>
+                                    <span class="w-10 text-right text-sm">0%</span>
+                                </div>
+                            </div>
+                            <a href="https://g.co/kgs/lawnscape" target="_blank" class="inline-block mt-4 text-lawnscape-green font-medium hover:underline">View all Google Reviews <i class="fas fa-external-link-alt ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video Testimonial -->
+                <div class="mt-12 text-center scroll-animate">
+                    <h3 class="text-2xl font-bold mb-6 text-lawnscape-green">Video Testimonial</h3>
+                    <div class="max-w-2xl mx-auto">
+                        <div class="relative rounded-2xl overflow-hidden shadow-lg cursor-pointer" onclick="openVideoModal(); gtag('event', 'video_play', {'event_category': 'engagement'});">
+                            <picture>
+                                <img src="images/video-thumbnail.jpg" alt="Video testimonial thumbnail" class="w-full">
+                            </picture>
+                            <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
+                                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
+                                    <i class="fas fa-play text-lawnscape-green text-xl ml-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-2 text-gray-600">Hear from one of our satisfied customers in Pasadena</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Portfolio Showcase -->
+        <section id="portfolio" class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12 scroll-animate">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-lawnscape-green">Our Work</h2>
+                    <p class="text-lg max-w-2xl mx-auto">Explore our portfolio of completed lawn care projects in Pasadena, Riverside, and Los Angeles.</p>
+                </div>
+                
+                <!-- Portfolio Filters -->
+                <div class="flex justify-center mb-8 scroll-animate">
+                    <div class="inline-flex rounded-lg border border-gray-300 overflow-hidden">
+                        <button class="px-4 py-2 bg-lawnscape-green text-white" data-filter="all">All</button>
+                        <button class="px-4 py-2 hover:bg-gray-100" data-filter="residential">Residential</button>
+                        <button class="px-4 py-2 hover:bg-gray-100" data-filter="commercial">Commercial</button>
+                        <button class="px-4 py-2 hover:bg-gray-100" data-filter="seasonal">Seasonal</button>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Gallery -->
+                <div class="relative">
+                    <div id="portfolio-carousel" class="overflow-hidden">
+                        <div class="flex transition-transform duration-500" id="portfolio-slider">
+                            <!-- Portfolio Item 1 -->
+                            <div class="w-full flex-shrink-0 px-2">
+                                <div class="rounded-2xl overflow-hidden shadow-lg">
+                                    <picture>
+                                        <img src="images/portfolio/lawn-1.jpg" alt="Residential lawn makeover, Pasadena" class="w-full h-64 object-cover">
+                                    </picture>
+                                    <div class="p-4 bg-white">
+                                        <h3 class="font-bold text-lg">Residential lawn makeover, Pasadena</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Portfolio Item 2 -->
+                            <div class="w-full flex-shrink-0 px-2">
+                                <div class="rounded-2xl overflow-hidden shadow-lg">
+                                    <picture>
+                                        <img src="images/portfolio/commercial-1.jpg" alt="Commercial property, downtown LA" class="w-full h-64 object-cover">
+                                    </picture>
+                                    <div class="p-4 bg-white">
+                                        <h3 class="font-bold text-lg">Commercial property, downtown LA</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Portfolio Item 3 -->
+                            <div class="w-full flex-shrink-0 px-2">
+                                <div class="rounded-2xl overflow-hidden shadow-lg">
+                                    <picture>
+                                        <img src="images/portfolio/flowers-1.jpg" alt="Flower bed redesign, Riverside" class="w-full h-64 object-cover">
+                                    </picture>
+                                    <div class="p-4 bg-white">
+                                        <h3 class="font-bold text-lg">Flower bed redesign, Riverside</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Carousel Controls -->
+                    <button id="prev-slide" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md ml-2" aria-label="Previous slide">
+                        <i class="fas fa-chevron-left text-lawnscape-green"></i>
+                    </button>
+                    <button id="next-slide" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md mr-2" aria-label="Next slide">
+                        <i class="fas fa-chevron-right text-lawnscape-green"></i>
+                    </button>
+                </div>
+                
+                <!-- Before/After Comparison -->
+                <div class="mt-12 max-w-4xl mx-auto scroll-animate">
+                    <h3 class="text-2xl font-bold mb-6 text-center text-lawnscape-green">Before & After</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <p class="text-center mb-2 font-medium">Before</p>
+                            <picture>
+                                <img src="images/before.jpg" alt="Lawn before treatment" class="rounded-2xl shadow-lg w-full">
+                            </picture>
+                        </div>
+                        <div>
+                            <p class="text-center mb-2 font-medium">After</p>
+                            <picture>
+                                <img src="images/after.jpg" alt="Lawn after treatment" class="rounded-2xl shadow-lg w-full">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Why Choose Us -->
+        <section id="why-choose-us" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12 scroll-animate">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-lawnscape-green">Why Choose Lawnscape</h2>
+                    <p class="text-lg max-w-2xl mx-auto">Discover what sets us apart from other lawn care services in Pasadena, Riverside, and Los Angeles.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                    <!-- Benefit 1 -->
+                    <div class="bg-white rounded-2xl shadow-lg p-6 text-center scroll-animate">
+                        <div class="w-16 h-16 bg-lawnscape-green text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-dollar-sign text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Affordable Pricing</h3>
+                        <p class="text-gray-600">Competitive rates without compromising on quality service.</p>
+                    </div>
+                    
+                    <!-- Benefit 2 -->
+                    <div class="bg-white rounded-2xl shadow-lg p-6 text-center scroll-animate">
+                        <div class="w-16 h-16 bg-lawnscape-green text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-calendar-check text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Reliable Scheduling</h3>
+                        <p class="text-gray-600">We show up on time, every time, as promised.</p>
+                    </div>
+                    
+                    <!-- Benefit 3 -->
+                    <div class="bg-white rounded-2xl shadow-lg p-6 text-center scroll-animate">
+                        <div class="w-16 h-16 bg-lawnscape-green text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-map-marker-alt text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Local Expertise</h3>
+                        <p class="text-gray-600">Deep knowledge of California's unique climate and soil conditions.</p>
+                    </div>
+                    
+                    <!-- Benefit 4 -->
+                    <div class="bg-white rounded-2xl shadow-lg p-6 text-center scroll-animate">
+                        <div class="w-16 h-16 bg-lawnscape-green text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-headset text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Friendly Support</h3>
+                        <p class="text-gray-600">Our team is always ready to help with any questions or concerns.</p>
+                    </div>
+                    
+                    <!-- Benefit 5 -->
+                    <div class="bg-white rounded-2xl shadow-lg p-6 text-center scroll-animate">
+                        <div class="w-16 h-16 bg-lawnscape-green text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-bolt text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Fast Response</h3>
+                        <p class="text-gray-600">Average response time of just 2 hours for all inquiries.</p>
+                    </div>
+                    
+                    <!-- Benefit 6 -->
+                    <div class="bg-white rounded-2xl shadow-lg p-6 text-center scroll-animate">
+                        <div class="w-16 h-16 bg-lawnscape-green text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-leaf text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Eco-Friendly Practices</h3>
+                        <p class="text-gray-600">Sustainable lawn care solutions that protect the environment.</p>
+                    </div>
+                </div>
+                
+                <!-- Google Guaranteed Badge -->
+                <div class="text-center scroll-animate">
+                    <div class="inline-block bg-white rounded-2xl shadow-lg p-6">
+                        <div class="flex items-center justify-center mb-4">
+                            <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mr-4">
+                                <i class="fab fa-google text-white text-2xl"></i>
+                            </div>
+                            <div class="text-left">
+                                <h3 class="text-xl font-bold">Google Guaranteed</h3>
+                                <p class="text-gray-600">Backed by Google's satisfaction guarantee</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 max-w-md mx-auto">This badge signifies that Lawnscape has passed Google's screening and qualification process.</p>
+                    </div>
+                </div>
+                
+                <!-- Micro-KPIs -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                    <div class="bg-white rounded-2xl shadow-lg p-6 text-center scroll-animate">
+                        <div class="text-3xl font-bold text-lawnscape-green mb-2" aria-hidden="true">
+                            <span class="counter" data-target="2">0</span> hours
+                        </div>
+                        <p class="text-gray-600">Avg. Response Time</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl shadow-lg p-6 text-center scroll-animate">
+                        <div class="text-3xl font-bold text-lawnscape-green mb-2" aria-hidden="true">
+                            <span class="counter" data-target="98">0</span>%
+                        </div>
+                        <p class="text-gray-600">Customer Satisfaction</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl shadow-lg p-6 text-center scroll-animate">
+                        <div class="text-3xl font-bold text-lawnscape-green mb-2" aria-hidden="true">
+                            <span class="counter" data-target="1200">0</span>+
+                        </div>
+                        <p class="text-gray-600">Jobs Completed Annually</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section id="faq" class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12 scroll-animate">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-lawnscape-green">Frequently Asked Questions</h2>
+                    <p class="text-lg max-w-2xl mx-auto">Find answers to common questions about our lawn care services in Pasadena, Riverside, and Los Angeles.</p>
+                </div>
+                
+                <div class="max-w-3xl mx-auto">
+                    <!-- FAQ Item 1 -->
+                    <div class="mb-4 scroll-animate">
+                        <button class="faq-toggle w-full text-left bg-white rounded-2xl shadow-lg p-6 flex justify-between items-center" aria-expanded="false">
+                            <h3 class="text-lg font-medium">How much do your lawn care services cost?</h3>
+                            <i class="fas fa-chevron-down text-lawnscape-green transition-transform"></i>
+                        </button>
+                        <div class="faq-content hidden bg-white rounded-b-2xl shadow-lg p-6 border-t">
+                            <p>Our lawn care services start at $35 for small properties and vary based on lawn size, condition, and specific services needed. We offer transparent pricing with no hidden fees. For a detailed quote tailored to your property, please <a href="#pricing" class="text-lawnscape-green hover:underline">check our pricing page</a> or contact us for a free estimate.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="mb-4 scroll-animate">
+                        <button class="faq-toggle w-full text-left bg-white rounded-2xl shadow-lg p-6 flex justify-between items-center" aria-expanded="false">
+                            <h3 class="text-lg font-medium">What areas do you service?</h3>
+                            <i class="fas fa-chevron-down text-lawnscape-green transition-transform"></i>
+                        </button>
+                        <div class="faq-content hidden bg-white rounded-b-2xl shadow-lg p-6 border-t">
+                            <p>We provide lawn care services throughout Pasadena, Riverside, Los Angeles, and surrounding communities in California. If you're unsure whether we service your specific area, please <a href="#contact" class="text-lawnscape-green hover:underline">contact us</a> with your zip code, and we'll be happy to confirm availability in your neighborhood.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="mb-4 scroll-animate">
+                        <button class="faq-toggle w-full text-left bg-white rounded-2xl shadow-lg p-6 flex justify-between items-center" aria-expanded="false">
+                            <h3 class="text-lg font-medium">Are your lawn care products eco-friendly?</h3>
+                            <i class="fas fa-chevron-down text-lawnscape-green transition-transform"></i>
+                        </button>
+                        <div class="faq-content hidden bg-white rounded-b-2xl shadow-lg p-6 border-t">
+                            <p>Yes, we prioritize eco-friendly lawn care solutions. We use sustainable practices and environmentally safe products whenever possible. Our team is trained in integrated pest management techniques that minimize chemical use while maintaining effective results. We're happy to discuss our eco-friendly options for your specific lawn care needs.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="mb-4 scroll-animate">
+                        <button class="faq-toggle w-full text-left bg-white rounded-2xl shadow-lg p-6 flex justify-between items-center" aria-expanded="false">
+                            <h3 class="text-lg font-medium">How often should I schedule lawn mowing?</h3>
+                            <i class="fas fa-chevron-down text-lawnscape-green transition-transform"></i>
+                        </button>
+                        <div class="faq-content hidden bg-white rounded-b-2xl shadow-lg p-6 border-t">
+                            <p>For most lawns in California, we recommend weekly mowing during the peak growing season (spring and early summer) and bi-weekly during slower growth periods. However, the ideal frequency depends on your grass type, weather conditions, and personal preferences. Our team can recommend a customized schedule based on your lawn's specific needs.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="mb-4 scroll-animate">
+                        <button class="faq-toggle w-full text-left bg-white rounded-2xl shadow-lg p-6 flex justify-between items-center" aria-expanded="false">
+                            <h3 class="text-lg font-medium">Do you guarantee your services?</h3>
+                            <i class="fas fa-chevron-down text-lawnscape-green transition-transform"></i>
+                        </button>
+                        <div class="faq-content hidden bg-white rounded-b-2xl shadow-lg p-6 border-t">
+                            <p>Yes, we stand behind the quality of our work with a satisfaction guarantee. If you're not completely satisfied with our service, please contact us within 48 hours, and we'll make it right. Additionally, we are a Google Guaranteed service provider, which means our work is backed by Google's satisfaction guarantee.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 6 -->
+                    <div class="mb-4 scroll-animate">
+                        <button class="faq-toggle w-full text-left bg-white rounded-2xl shadow-lg p-6 flex justify-between items-center" aria-expanded="false">
+                            <h3 class="text-lg font-medium">Do you offer subscription plans?</h3>
+                            <i class="fas fa-chevron-down text-lawnscape-green transition-transform"></i>
+                        </button>
+                        <div class="faq-content hidden bg-white rounded-b-2xl shadow-lg p-6 border-t">
+                            <p>Yes, we offer flexible subscription plans for ongoing lawn care services. Our subscription options include weekly, bi-weekly, and monthly service frequencies. Subscribers receive priority scheduling, discounted rates compared to one-time services, and automatic seasonal adjustments to their lawn care program. You can easily modify or cancel your subscription with 48 hours' notice.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 7 -->
+                    <div class="mb-4 scroll-animate">
+                        <button class="faq-toggle w-full text-left bg-white rounded-2xl shadow-lg p-6 flex justify-between items-center" aria-expanded="false">
+                            <h3 class="text-lg font-medium">What is your cancellation policy?</h3>
+                            <i class="fas fa-chevron-down text-lawnscape-green transition-transform"></i>
+                        </button>
+                        <div class="faq-content hidden bg-white rounded-b-2xl shadow-lg p-6 border-t">
+                            <p>We understand that plans change. For one-time services, please provide at least 24 hours' notice to cancel or reschedule without penalty. For subscription plans, we require 48 hours' notice before your next scheduled service. Cancellations made with less notice may be subject to a cancellation fee. We strive to be flexible and work with our customers to accommodate schedule changes whenever possible.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 8 -->
+                    <div class="mb-4 scroll-animate">
+                        <button class="faq-toggle w-full text-left bg-white rounded-2xl shadow-lg p-6 flex justify-between items-center" aria-expanded="false">
+                            <h3 class="text-lg font-medium">Can I add additional services to my regular lawn care?</h3>
+                            <i class="fas fa-chevron-down text-lawnscape-green transition-transform"></i>
+                        </button>
+                        <div class="faq-content hidden bg-white rounded-b-2xl shadow-lg p-6 border-t">
+                            <p>Absolutely! We offer a wide range of add-on services that can be combined with your regular lawn care. These include fertilization, weed control, aeration, overseeding, pest control, seasonal cleanup, and landscaping enhancements. Simply let us know which additional services you're interested in, and we'll provide a customized quote and schedule them at your convenience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact & Service Area -->
+        <section id="contact" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12 scroll-animate">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-lawnscape-green">Contact Us</h2>
+                    <p class="text-lg max-w-2xl mx-auto">Get in touch with our team for a free estimate or to learn more about our lawn care services.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="scroll-animate">
+                        <div class="bg-white rounded-2xl shadow-lg p-6 mb-6">
+                            <h3 class="text-xl font-bold mb-4 text-lawnscape-green">Get in Touch</h3>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-lawnscape-green text-white rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">Phone</h4>
+                                        <a href="tel:(555)123-4567" class="text-lawnscape-green hover:underline" onclick="gtag('event', 'call_click', {'event_category': 'engagement'});">(555) 123-4567</a>
+                                        <p class="text-sm text-gray-600">Monday-Friday: 8am-6pm, Saturday: 9am-4pm</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-lawnscape-green text-white rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">Email</h4>
+                                        <a href="mailto:info@lawnscape.com" class="text-lawnscape-green hover:underline">info@lawnscape.com</a>
+                                        <p class="text-sm text-gray-600">We typically respond within 2 hours</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-lawnscape-green text-white rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">Address</h4>
+                                        <p>123 Green Street<br>Pasadena, CA 91101</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl shadow-lg p-6">
+                            <h3 class="text-xl font-bold mb-4 text-lawnscape-green">Service Area</h3>
+                            <p class="mb-4">Serving Pasadena, Riverside, Los Angeles, and nearby communities.</p>
+                            
+                            <div class="space-y-2">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-lawnscape-green mr-2"></i>
+                                    <span>Pasadena</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-lawnscape-green mr-2"></i>
+                                    <span>Riverside</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-lawnscape-green mr-2"></i>
+                                    <span>Los Angeles</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-lawnscape-green mr-2"></i>
+                                    <span>San Marino</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-lawnscape-green mr-2"></i>
+                                    <span>Altadena</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-lawnscape-green mr-2"></i>
+                                    <span>San Gabriel</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="scroll-animate">
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                            <div class="h-96">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.344!2d-118.144!3d34.147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDA4JzUwLjAiTiAxMTjCsDA4JzM4LjQiVw!5e0!3m2!1sen!2sus!4v1234567890" 
+                                    width="100%" 
+                                    height="100%" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    title="Lawnscape service area map"
+                                    aria-label="Map showing Lawnscape's service areas in Pasadena, Riverside, and Los Angeles">
+                                </iframe>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-4 text-lawnscape-green">Service Hours</h3>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between">
+                                        <span>Monday - Friday</span>
+                                        <span>8:00 AM - 6:00 PM</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>Saturday</span>
+                                        <span>9:00 AM - 4:00 PM</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>Sunday</span>
+                                        <span>Closed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Booking Form -->
+        <section id="booking-form" class="py-16 bg-lawnscape-green text-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-2xl mx-auto">
+                    <div class="text-center mb-8 scroll-animate">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Get Your Free Estimate</h2>
+                        <p class="text-lg max-w-xl mx-auto text-green-100">Fill out the form below and we'll get back to you within 24 hours (average response time: 2 hours).</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl shadow-xl p-6 text-gray-800 scroll-animate">
+                        <form id="mailchimp-form" action="https://lawnscape.us14.list-manage.com/subscribe/post?u=YOUR_U_ID&id=YOUR_LIST_ID" method="post" target="_blank">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="mc-fname" class="block text-sm font-medium mb-1">First Name</label>
+                                    <input type="text" id="mc-fname" name="FNAME" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lawnscape-green focus:border-lawnscape-green" aria-required="true">
+                                </div>
+                                
+                                <div>
+                                    <label for="mc-lname" class="block text-sm font-medium mb-1">Last Name</label>
+                                    <input type="text" id="mc-lname" name="LNAME" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lawnscape-green focus:border-lawnscape-green">
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                                <div>
+                                    <label for="mc-email" class="block text-sm font-medium mb-1">Email</label>
+                                    <input type="email" id="mc-email" name="EMAIL" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lawnscape-green focus:border-lawnscape-green" aria-required="true">
+                                </div>
+                                
+                                <div>
+                                    <label for="mc-phone" class="block text-sm font-medium mb-1">Phone</label>
+                                    <input type="tel" id="mc-phone" name="PHONE" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lawnscape-green focus:border-lawnscape-green" aria-required="true">
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                                <div>
+                                    <label for="mc-service" class="block text-sm font-medium mb-1">Service</label>
+                                    <select id="mc-service" name="SERVICE" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lawnscape-green focus:border-lawnscape-green" aria-required="true">
+                                        <option value="">Select a service</option>
+                                        <option value="lawn-mowing">Lawn Mowing</option>
+                                        <option value="edging-trimming">Edging & Trimming</option>
+                                        <option value="weed-control">Weed Control</option>
+                                        <option value="fertilization">Fertilization</option>
+                                        <option value="seasonal-cleanup">Seasonal Cleanup</option>
+                                        <option value="aeration">Aeration</option>
+                                        <option value="commercial">Commercial Property Maintenance</option>
+                                        <option value="landscaping">Landscaping Enhancements</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label for="mc-frequency" class="block text-sm font-medium mb-1">Frequency</label>
+                                    <select id="mc-frequency" name="FREQUENCY" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lawnscape-green focus:border-lawnscape-green" aria-required="true">
+                                        <option value="">Select frequency</option>
+                                        <option value="one-time">One-time</option>
+                                        <option value="weekly">Weekly</option>
+                                        <option value="biweekly">Bi-weekly</option>
+                                        <option value="monthly">Monthly</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                                <div>
+                                    <label for="mc-address" class="block text-sm font-medium mb-1">Address</label>
+                                    <input type="text" id="mc-address" name="ADDRESS" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lawnscape-green focus:border-lawnscape-green" aria-required="true">
+                                </div>
+                                
+                                <div>
+                                    <label for="mc-zip" class="block text-sm font-medium mb-1">Zip Code</label>
+                                    <input type="text" id="mc-zip" name="ZIP" pattern="[0-9]{5}" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lawnscape-green focus:border-lawnscape-green" aria-required="true">
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <label for="mc-date" class="block text-sm font-medium mb-1">Preferred Date</label>
+                                <input type="date" id="mc-date" name="DATE" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lawnscape-green focus:border-lawnscape-green" aria-required="true">
+                            </div>
+                            
+                            <div class="mt-4">
+                                <label for="mc-notes" class="block text-sm font-medium mb-1">Additional Notes</label>
+                                <textarea id="mc-notes" name="NOTES" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lawnscape-green focus:border-lawnscape-green"></textarea>
+                            </div>
+                            
+                            <!-- Honeypot for spam prevention -->
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                <input type="text" name="b_YOUR_U_ID_YOUR_LIST_ID" tabindex="-1" value="">
+                            </div>
+                            
+                            <div class="mt-6">
+                                <div class="text-xs text-gray-600 mb-4">
+                                    <p>We respect your privacy. Your information will never be shared with third parties.</p>
+                                    <p>By submitting this form, you agree to receive marketing communications from Lawnscape.</p>
+                                </div>
+                                
+                                <button type="submit" class="w-full py-3 bg-lawnscape-green text-white font-bold rounded-lg hover:bg-green-800 transition" onclick="gtag('event', 'estimate_submit', {'event_category': 'conversion'});">Confirm My Free Estimate</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-lawnscape-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Lawnscape</h3>
+                    <p class="text-gray-300 mb-4">California's premier lawn care service, delivering exceptional results since 2015.</p>
+                    <p class="text-gray-300">Top-Rated Lawn Care in Pasadena, Riverside, Los Angeles</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition">About</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-white transition">Services</a></li>
+                        <li><a href="#pricing" class="text-gray-300 hover:text-white transition">Pricing</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Accessibility</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-lawnscape-green transition" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-lawnscape-green transition" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-lawnscape-green transition" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    
+                    <div>
+                        <h5 class="font-medium mb-2">Business Hours</h5>
+                        <p class="text-gray-300 text-sm">Monday-Friday: 8am-6pm</p>
+                        <p class="text-gray-300 text-sm">Saturday: 9am-4pm</p>
+                        <p class="text-gray-300 text-sm">Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Lawnscape. All rights reserved.</p>
+                <p class="mt-2">123 Green Street, Pasadena, CA 91101 | (555) 123-4567</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Video Modal -->
+    <div id="video-modal" class="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
+            <div class="p-4 flex justify-between items-center border-b">
+                <h3 class="text-xl font-bold">Customer Testimonial</h3>
+                <button id="close-video-modal" class="text-gray-500 hover:text-gray-700" aria-label="Close video">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="aspect-w-16 aspect-h-9">
+                <iframe id="video-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-auto"></iframe>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Lawnscape",
+        "image": "https://lawnscape.com/images/lawn-care-bg.jpg",
+        "@id": "https://lawnscape.com/",
+        "url": "https://lawnscape.com/",
+        "telephone": "(555) 123-4567",
+        "priceRange": "$$",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Green Street",
+            "addressLocality": "Pasadena",
+            "addressRegion": "CA",
+            "postalCode": "91101",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 34.147,
+            "longitude": -118.144
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+            ],
+            "opens": "08:00",
+            "closes": "18:00"
+        },
+        "sameAs": [
+            "https://www.facebook.com/lawnscape",
+            "https://www.instagram.com/lawnscape"
+        ],
+        "serviceArea": {
+            "@type": "Place",
+            "name": "Pasadena, Riverside, Los Angeles and nearby communities"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "324"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Lawn Mowing",
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Lawnscape"
+        },
+        "areaServed": {
+            "@type": "Place",
+            "name": "Pasadena, CA"
+        },
+        "description": "Professional lawn mowing services for Pasadena homes that keep your grass healthy and perfectly trimmed all season long."
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Edging & Trimming",
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Lawnscape"
+        },
+        "areaServed": {
+            "@type": "Place",
+            "name": "Riverside, CA"
+        },
+        "description": "Precision edging and trimming services that create clean lines and enhance your Riverside property's curb appeal."
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Weed Control",
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Lawnscape"
+        },
+        "areaServed": {
+            "@type": "Place",
+            "name": "Los Angeles, CA"
+        },
+        "description": "Effective weed control solutions for Los Angeles lawns that eliminate unwanted plants without harming your grass."
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much do your lawn care services cost?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our lawn care services start at $35 for small properties and vary based on lawn size, condition, and specific services needed. We offer transparent pricing with no hidden fees. For a detailed quote tailored to your property, please check our pricing page or contact us for a free estimate."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What areas do you service?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We provide lawn care services throughout Pasadena, Riverside, Los Angeles, and surrounding communities in California. If you're unsure whether we service your specific area, please contact us with your zip code, and we'll be happy to confirm availability in your neighborhood."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are your lawn care products eco-friendly?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we prioritize eco-friendly lawn care solutions. We use sustainable practices and environmentally safe products whenever possible. Our team is trained in integrated pest management techniques that minimize chemical use while maintaining effective results. We're happy to discuss our eco-friendly options for your specific lawn care needs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How often should I schedule lawn mowing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For most lawns in California, we recommend weekly mowing during the peak growing season (spring and early summer) and bi-weekly during slower growth periods. However, the ideal frequency depends on your grass type, weather conditions, and personal preferences. Our team can recommend a customized schedule based on your lawn's specific needs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you guarantee your services?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we stand behind the quality of our work with a satisfaction guarantee. If you're not completely satisfied with our service, please contact us within 48 hours, and we'll make it right. Additionally, we are a Google Guaranteed service provider, which means our work is backed by Google's satisfaction guarantee."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you offer subscription plans?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we offer flexible subscription plans for ongoing lawn care services. Our subscription options include weekly, bi-weekly, and monthly service frequencies. Subscribers receive priority scheduling, discounted rates compared to one-time services, and automatic seasonal adjustments to their lawn care program. You can easily modify or cancel your subscription with 48 hours' notice."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is your cancellation policy?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We understand that plans change. For one-time services, please provide at least 24 hours' notice to cancel or reschedule without penalty. For subscription plans, we require 48 hours' notice before your next scheduled service. Cancellations made with less notice may be subject to a cancellation fee. We strive to be flexible and work with our customers to accommodate schedule changes whenever possible."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I add additional services to my regular lawn care?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely! We offer a wide range of add-on services that can be combined with your regular lawn care. These include fertilization, weed control, aeration, overseeding, pest control, seasonal cleanup, and landscaping enhancements. Simply let us know which additional services you're interested in, and we'll provide a customized quote and schedule them at your convenience."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Review",
+        "author": {
+            "@type": "Person",
+            "name": "John M."
+        },
+        "datePublished": "2023-05-15",
+        "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+        },
+        "reviewBody": "Lawnscape transformed my front yard in 2 days. Highly recommended!",
+        "itemReviewed": {
+            "@type": "LocalBusiness",
+            "name": "Lawnscape"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://lawnscape.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://lawnscape.com/#services"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Pricing",
+                "item": "https://lawnscape.com/#pricing"
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Contact",
+                "item": "https://lawnscape.com/#contact"
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-XXXXXXX');
+    </script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+            mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+        });
+        
+        // Reviews widget toggle
+        const reviewsWidget = document.getElementById('reviews-widget');
+        const reviewsToggle = document.getElementById('reviews-toggle');
+        
+        reviewsToggle.addEventListener('click', () => {
+            reviewsWidget.classList.toggle('translate-x-full');
+        });
+        
+        // Quick booking drawer
+        const quickBooking = document.getElementById('quick-booking');
+        const closeBooking = document.getElementById('close-booking');
+        const mobileEstimateBtn = document.getElementById('mobile-estimate-btn');
+        
+        function openQuickBooking() {
+            quickBooking.classList.remove('translate-y-full');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeQuickBooking() {
+            quickBooking.classList.add('translate-y-full');
+            document.body.style.overflow = '';
+        }
+        
+        closeBooking.addEventListener('click', closeQuickBooking);
+        mobileEstimateBtn.addEventListener('click', openQuickBooking);
+        
+        // Open quick booking when clicking "Get Free Estimate" links
+        document.querySelectorAll('a[href="#booking-form"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                openQuickBooking();
+            });
+        });
+        
+        // FAQ accordion
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+        
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+                const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+                
+                toggle.setAttribute('aria-expanded', !isExpanded);
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+        
+        // Portfolio carousel
+        const portfolioSlider = document.getElementById('portfolio-slider');
+        const prevSlide = document.getElementById('prev-slide');
+        const nextSlide = document.getElementById('next-slide');
+        const portfolioFilters = document.querySelectorAll('[data-filter]');
+        
+        let currentSlide = 0;
+        const totalSlides = 3;
+        
+        function updateSlidePosition() {
+            portfolioSlider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+        
+        prevSlide.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlidePosition();
+        });
+        
+        nextSlide.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlidePosition();
+        });
+        
+        // Portfolio filters
+        portfolioFilters.forEach(filter => {
+            filter.addEventListener('click', () => {
+                // Update active filter
+                portfolioFilters.forEach(f => {
+                    f.classList.remove('bg-lawnscape-green', 'text-white');
+                    f.classList.add('hover:bg-gray-100');
+                });
+                filter.classList.add('bg-lawnscape-green', 'text-white');
+                filter.classList.remove('hover:bg-gray-100');
+                
+                // In a real implementation, this would filter the portfolio items
+                // For this demo, we'll just reset to the first slide
+                currentSlide = 0;
+                updateSlidePosition();
+            });
+        });
+        
+        // Video modal
+        const videoModal = document.getElementById('video-modal');
+        const closeVideoModal = document.getElementById('close-video-modal');
+        const videoIframe = document.getElementById('video-iframe');
+        
+        function openVideoModal() {
+            videoModal.classList.remove('hidden');
+            videoIframe.src = 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeVideoModalFunc() {
+            videoModal.classList.add('hidden');
+            videoIframe.src = '';
+            document.body.style.overflow = '';
+        }
+        
+        closeVideoModal.addEventListener('click', closeVideoModalFunc);
+        
+        // Close modal when clicking outside
+        videoModal.addEventListener('click', (e) => {
+            if (e.target === videoModal) {
+                closeVideoModalFunc();
+            }
+        });
+        
+        // Price calculator
+        const calcSize = document.getElementById('calc-size');
+        const calcFrequency = document.getElementById('calc-frequency');
+        const calcPlan = document.getElementById('calc-plan');
+        const calcSubscription = document.getElementById('calc-subscription');
+        const calcResult = document.getElementById('calc-result');
+        const calcFrequencyText = document.getElementById('calc-frequency-text');
+        
+        const pricingData = {
+            small: {
+                basic: { oneTime: '$35-45', subscription: '$30-40' },
+                standard: { oneTime: '$45-55', subscription: '$40-50' },
+                premium: { oneTime: '$55-65', subscription: '$50-60' }
+            },
+            medium: {
+                basic: { oneTime: '$45-60', subscription: '$40-55' },
+                standard: { oneTime: '$60-75', subscription: '$55-70' },
+                premium: { oneTime: '$75-90', subscription: '$70-85' }
+            },
+            large: {
+                basic: { oneTime: '$60-80', subscription: '$55-75' },
+                standard: { oneTime: '$80-100', subscription: '$75-95' },
+                premium: { oneTime: '$100-120', subscription: '$95-115' }
+            },
+            custom: {
+                basic: { oneTime: 'Contact us', subscription: 'Contact us' },
+                standard: { oneTime: 'Contact us', subscription: 'Contact us' },
+                premium: { oneTime: 'Contact us', subscription: 'Contact us' }
+            }
+        };
+        
+        function updatePriceCalculator() {
+            const size = calcSize.value;
+            const plan = calcPlan.value;
+            const isSubscription = calcSubscription.checked;
+            
+            const price = pricingData[size][plan][isSubscription ? 'subscription' : 'oneTime'];
+            calcResult.textContent = price;
+            
+            if (isSubscription) {
+                calcFrequencyText.textContent = 'per month';
+            } else {
+                calcFrequencyText.textContent = 'per service';
+            }
+        }
+        
+        calcSize.addEventListener('change', updatePriceCalculator);
+        calcFrequency.addEventListener('change', updatePriceCalculator);
+        calcPlan.addEventListener('change', updatePriceCalculator);
+        calcSubscription.addEventListener('change', updatePriceCalculator);
+        
+        // Initialize price calculator
+        updatePriceCalculator();
+        
+        // Current month for offers
+        const currentMonthElement = document.getElementById('current-month');
+        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        const currentDate = new Date();
+        currentMonthElement.textContent = months[currentDate.getMonth()];
+        
+        // Offer redemption
+        function redeemOffer(offerType) {
+            openQuickBooking();
+            // In a real implementation, this would pre-fill the form with the selected offer
+            // For this demo, we'll just show an alert
+            setTimeout(() => {
+                alert(`Offer "${offerType}" has been applied to your booking!`);
+            }, 500);
+        }
+        
+        // Form submissions
+        document.getElementById('hero-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // In a real implementation, this would submit the form data
+            // For this demo, we'll just show a success message
+            alert('Thank you for your request! We will contact you within 24 hours.');
+            e.target.reset();
+        });
+        
+        document.getElementById('quick-booking-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // In a real implementation, this would submit the form data
+            // For this demo, we'll just show a success message
+            alert('Thank you for your booking request! We will contact you within 24 hours.');
+            e.target.reset();
+            closeQuickBooking();
+        });
+        
+        // Scroll animations
+        const scrollElements = document.querySelectorAll('.scroll-animate');
+        
+        const elementInView = (el, dividend = 1) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return (
+                elementTop <=
+                (window.innerHeight || document.documentElement.clientHeight) / dividend
+            );
+        };
+        
+        const displayScrollElement = (element) => {
+            element.classList.add('visible');
+        };
+        
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el, 1.25)) {
+                    displayScrollElement(el);
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', () => {
+            handleScrollAnimation();
+        });
+        
+        // Initialize animations on page load
+        handleScrollAnimation();
+        
+        // Counter animation for stats
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+        
+        const countUp = () => {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(countUp, 10);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        };
+        
+        // Start counter animation when stats section is in view
+        const statsSection = document.querySelector('#why-choose-us .grid:last-child');
+        const statsObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                countUp();
+                statsObserver.unobserve(statsSection);
+            }
+        }, { threshold: 0.5 });
+        
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+        });
+        
+        // Form validation
+        const forms = document.querySelectorAll('form');
+        
+        forms.forEach(form => {
+            form.addEventListener('submit', (e) => {
+                if (!form.checkValidity()) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+        
+        // Initialize Google Analytics event tracking (placeholder)
+        window.gtag = function() {
+            // In a real implementation, this would call the actual gtag function
+            console.log('Google Analytics event:', arguments);
+        };
+    </script>
+</body>
+</html>
