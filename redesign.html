@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Air Lawn Care | Organic & Eco-Friendly</title>
+    <!-- Tailwind + Font Awesome (no emoji, only icons) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; background-color: #f6faf5; }
+        .hero-gradient { background: linear-gradient(105deg, #1a3b2e 0%, #2d6a4f 100%); }
+        .card-soft { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-soft:hover { transform: translateY(-6px); box-shadow: 0 30px 35px -12px rgba(20, 70, 30, 0.25); }
+        .input-focus-ring:focus { outline: none; border-color: #2d6a4f; box-shadow: 0 0 0 4px #b7e0c5; }
+        .clip-tag { clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%); }
+        .footer-social a { transition: opacity 0.15s; }
+        .footer-social a:hover { opacity: 0.7; }
+        /* consistent image fallback */
+        img { object-fit: cover; background-color: #cadfd1; }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+
+<!-- SKIP LINK -->
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white border-2 border-green-800 p-4 z-50 rounded-xl shadow-xl">Skip to content</a>
+
+<!-- HEADER (absolute, transparent) -->
+<header class="absolute top-0 left-0 w-full z-30 bg-transparent">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-5 flex justify-between items-center">
+        <!-- logo (font awesome only) -->
+        <div class="flex items-center gap-2 text-white drop-shadow-md">
+            <i class="fas fa-leaf text-3xl"></i>
+            <span class="font-bold text-2xl tracking-tight">CLEAN AIR <span class="font-light text-lime-200">LAWN CARE</span></span>
+        </div>
+        <!-- desktop navigation -->
+        <nav class="hidden md:flex gap-8 text-white font-medium text-sm uppercase tracking-wider">
+            <a href="#" class="hover:text-lime-200 transition">HOME</a>
+            <a href="#" class="hover:text-lime-200 transition">SERVICES</a>
+            <a href="#" class="hover:text-lime-200 transition">LOCATIONS</a>
+            <a href="#" class="hover:text-lime-200 transition">ABOUT</a>
+            <a href="#" class="hover:text-lime-200 transition">FRANCHISE</a>
+        </nav>
+        <a href="#" class="bg-lime-300 text-green-900 px-6 py-2.5 rounded-full text-sm font-bold shadow-lg hover:bg-lime-200 transition hidden md:inline-flex items-center gap-2"><i class="fas fa-file-signature"></i> GET A QUOTE</a>
+        <!-- mobile icon -->
+        <button class="md:hidden text-white text-2xl"><i class="fas fa-bars"></i></button>
+    </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main id="main-content">
+
+    <!-- HERO SECTION (dynamic, all icons, no emoji) -->
+    <section class="hero-gradient text-white relative overflow-hidden">
+        <div class="absolute -right-20 top-10 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
+        <div class="absolute -left-10 bottom-10 w-72 h-72 bg-lime-300/10 rounded-full blur-2xl"></div>
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 pt-40 pb-28 md:pt-48 md:pb-36 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- left content -->
+                <div class="space-y-6">
+                    <span class="inline-flex items-center gap-2 bg-lime-500/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-lime-100 w-auto"><i class="fas fa-shield-alt text-lime-200"></i> FAMILY & PET SAFE · SOLAR POWERED</span>
+                    <h1 class="text-5xl md:text-6xl font-black leading-[1.1]">Clean Air Lawn Care:<br><span class="text-lime-300">Organic, Eco-Friendly</span></h1>
+                    <p class="text-xl text-green-50 max-w-lg">We use family- and pet-safe organic products and solar-powered equipment to help your lawn grow strong, green, and resilient all season.</p>
+                    <div class="flex flex-wrap gap-4 pt-3">
+                        <a href="#" class="bg-lime-300 text-green-900 px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-lime-200 transition flex items-center gap-3"><i class="fas fa-calculator"></i> 60-SECOND QUOTE</a>
+                        <a href="#" class="border-2 border-white/70 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition flex items-center gap-2"><i class="fas fa-circle-info"></i> LEARN MORE</a>
+                    </div>
+                    <!-- stats -->
+                    <div class="flex gap-6 pt-4 text-sm font-medium"><span><i class="fas fa-star text-lime-300 mr-1"></i> 100+ 5-STAR REVIEWS</span><span><i class="fas fa-city text-lime-300 mr-1"></i> 40+ CITIES</span></div>
+                </div>
+                <!-- right: images (fixed unsplash working urls) -->
+                <div class="relative flex justify-center items-center h-96 lg:h-auto">
+                    <img src="https://cleanairlawncare.com/wp-content/uploads/2026/01/lawn-maintenance-and-mowing-that-is-eco-friendly-1024x1024.webp?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Lush green lawn" class="rounded-3xl shadow-2xl w-72 h-72 object-cover border-4 border-white/20 rotate-2 hover:rotate-0 transition">
+                    <img src="https://cleanairlawncare.com/wp-content/uploads/2026/01/Mulch-Install-Service-1024x1024.webp?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Eco-friendly mowing" class="rounded-3xl shadow-2xl w-64 h-64 object-cover border-4 border-white/20 absolute -bottom-6 -left-6 -rotate-6 hover:rotate-0 transition hidden lg:block">
+                </div>
+            </div>
+        </div>
+        <!-- wave separator (svg) -->
+        <div class="absolute bottom-0 left-0 w-full leading-none text-[#f6faf5]"><svg viewBox="0 0 1440 70" fill="currentColor" preserveAspectRatio="none"><path d="M0,40 Q240,10 480,40 T960,40 T1440,30 L1440,70 L0,70 Z"></path></svg></div>
+    </section>
+
+    <!-- SPRING HIGHLIGHTS (no emoji, fontawesome) -->
+    <section class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-20">
+        <div class="text-center mb-16">
+            <span class="inline-flex items-center gap-2 text-green-800 font-bold text-sm bg-green-100 px-5 py-2.5 rounded-full"><i class="fas fa-calendar-alt text-green-800"></i> SPRING HIGHLIGHTS</span>
+            <h2 class="text-4xl md:text-5xl font-black mt-6 text-gray-800">Wake Up Your Lawn <span class="text-green-700 block text-3xl md:text-4xl mt-2">The Right Way</span></h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mt-4 text-lg">Winter wear, early weeds, packed schedules. We help your lawn wake up with safer pre-emergents and organic treatments.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-7">
+            <!-- card 1 -->
+            <div class="bg-white rounded-3xl shadow-xl p-6 card-soft border border-gray-100">
+                <img src="https://images.unsplash.com/photo-1557429287-b2e26467fc2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Lawn mowing service" class="rounded-2xl h-52 w-full object-cover mb-5 shadow-sm">
+                <h3 class="text-2xl font-bold flex items-center gap-2"><i class="fas fa-cut text-green-700"></i> LAWN MAINTENANCE</h3>
+                <p class="text-gray-600 mt-2">Consistent mowing, edging, and detailing keep your lawn healthy. Routine reduces stress, roots grow deeper.</p>
+                <a href="#" class="inline-block mt-5 font-semibold text-green-800 hover:underline"><i class="fas fa-arrow-right mr-1"></i> LEARN MORE</a>
+            </div>
+            <!-- card 2 -->
+            <div class="bg-white rounded-3xl shadow-xl p-6 card-soft border border-gray-100">
+                <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mulch installation" class="rounded-2xl h-52 w-full object-cover mb-5 shadow-sm">
+                <h3 class="text-2xl font-bold flex items-center gap-2"><i class="fas fa-tree text-green-700"></i> MULCH INSTALLATION</h3>
+                <p class="text-gray-600 mt-2">Fresh mulch retains moisture, protects roots, and suppresses weeds. Garden beds get a clean, finished look.</p>
+                <a href="#" class="inline-block mt-5 font-semibold text-green-800 hover:underline"><i class="fas fa-arrow-right mr-1"></i> LEARN MORE</a>
+            </div>
+            <!-- card 3 -->
+            <div class="bg-white rounded-3xl shadow-xl p-6 card-soft border border-gray-100">
+                <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Organic fertilization" class="rounded-2xl h-52 w-full object-cover mb-5 shadow-sm">
+                <h3 class="text-2xl font-bold flex items-center gap-2"><i class="fas fa-droplet text-green-700"></i> ORGANIC FERTILIZATION</h3>
+                <p class="text-gray-600 mt-2">Feed the soil, support root growth, stop weeds before they start with safer pre‑emergents.</p>
+                <a href="#" class="inline-block mt-5 font-semibold text-green-800 hover:underline"><i class="fas fa-arrow-right mr-1"></i> LEARN MORE</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESTIMATE + SERVICES (two column, fixed layout, no lowercase) -->
+    <section class="bg-white py-16 md:py-20">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 grid lg:grid-cols-2 gap-12 items-start">
+            <!-- left: estimate form (fully corrected) -->
+            <div class="bg-gradient-to-b from-green-50 to-white p-8 rounded-3xl shadow-2xl border border-green-100">
+                <div class="flex items-center gap-3 mb-6"><i class="fas fa-file-pen text-green-800 text-3xl"></i><h3 class="text-3xl font-bold text-gray-800">REQUEST AN ESTIMATE</h3></div>
+                <form class="space-y-5">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div><label class="block text-sm font-medium text-gray-700 mb-1"><i class="fas fa-user mr-1 text-green-700"></i>NAME *</label><input type="text" class="w-full p-3 border border-gray-300 rounded-xl input-focus-ring"></div>
+                        <div><label class="block text-sm font-medium text-gray-700 mb-1"><i class="fas fa-envelope mr-1 text-green-700"></i>EMAIL *</label><input type="email" class="w-full p-3 border border-gray-300 rounded-xl input-focus-ring"></div>
+                    </div>
+                    <div><label class="block text-sm font-medium text-gray-700 mb-1"><i class="fas fa-phone mr-1 text-green-700"></i>PHONE *</label><input type="tel" class="w-full p-3 border border-gray-300 rounded-xl input-focus-ring"></div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div><label class="block text-sm font-medium text-gray-700 mb-1">STREET ADDRESS</label><input type="text" value="123 STREET" class="w-full p-3 border border-gray-300 rounded-xl input-focus-ring"></div>
+                        <div><label class="block text-sm font-medium text-gray-700 mb-1">CITY</label><input type="text" value="TEST CITY" class="w-full p-3 border border-gray-300 rounded-xl input-focus-ring"></div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div><label class="block text-sm font-medium text-gray-700 mb-1">ZIP CODE</label><input type="text" value="12345" class="w-full p-3 border border-gray-300 rounded-xl input-focus-ring"></div>
+                        <div><label class="block text-sm font-medium text-gray-700 mb-1">SERVICES</label>
+                            <select class="w-full p-3 border border-gray-300 rounded-xl input-focus-ring bg-white">
+                                <option>ORGANIC FERTILIZATION</option><option>ELECTRIC MOWING</option><option>NATURAL WEED CONTROL</option><option>MOSQUITO CONTROL</option><option>OTHER</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div><label class="block text-sm font-medium text-gray-700 mb-2">PREFERRED CONTACT</label>
+                        <div class="flex gap-6"><label class="inline-flex items-center gap-1"><i class="fas fa-phone-alt"></i><input type="radio" name="contact" class="ml-1"> CALL</label><label class="inline-flex items-center gap-1"><i class="fas fa-comment"></i><input type="radio" name="contact" class="ml-1"> TEXT</label><label class="inline-flex items-center gap-1"><i class="fas fa-at"></i><input type="radio" name="contact" class="ml-1"> EMAIL</label></div>
+                    </div>
+                    <div><label class="block text-sm font-medium text-gray-700 mb-1">HOW DID YOU HEAR?</label>
+                        <select class="w-full p-3 border border-gray-300 rounded-xl input-focus-ring bg-white"><option>SELECT ONE</option><option>ONLINE</option><option>FRIEND</option><option>SOCIAL</option></select>
+                    </div>
+                    <button type="submit" class="w-full bg-green-800 text-white font-bold py-4 rounded-xl hover:bg-green-700 transition shadow-lg text-lg flex items-center justify-center gap-2"><i class="fas fa-paper-plane"></i> SUBMIT</button>
+                </form>
+            </div>
+
+            <!-- right: service highlights + franchise + testimonial -->
+            <div class="space-y-8">
+                <!-- service cards in one -->
+                <div class="bg-green-800 text-white p-8 rounded-3xl shadow-2xl space-y-6">
+                    <div class="flex gap-4"><i class="fas fa-seedling text-3xl text-lime-300"></i><div><h4 class="text-xl font-bold">ORGANIC LAWN FERTILIZING</h4><p class="text-green-100">Pet safe, family safe, pollinator safe. Micro-organism soil builders.</p></div></div>
+                    <div class="flex gap-4"><i class="fas fa-bolt text-3xl text-lime-300"></i><div><h4 class="text-xl font-bold">ELECTRIC LAWN MOWING</h4><p class="text-green-100">Solar-powered mowers · zero noise · zero air pollution</p></div></div>
+                    <div class="flex gap-4"><i class="fas fa-bug text-3xl text-lime-300"></i><div><h4 class="text-xl font-bold">NATURAL WEED CONTROL</h4><p class="text-green-100">Includes “Moose Juice” custom mix & micro-organism builders.</p></div></div>
+                </div>
+                <!-- franchise announcement -->
+                <div class="bg-amber-50 p-7 rounded-3xl border-l-8 border-amber-400 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                    <i class="fas fa-store-alt text-4xl text-amber-600"></i>
+                    <div><span class="text-amber-800 font-black text-sm">NEW FRANCHISE LOCATIONS</span>
+                    <h5 class="text-xl font-bold">JOHN'S CREEK, GA · NORTHERN CO · VANGUARD, WA</h5>
+                    <p class="text-gray-700">Serving communities with solar mowing & organic soil-building.</p></div>
+                    <a href="#" class="bg-amber-400 px-6 py-3 rounded-full font-bold text-sm hover:bg-amber-500 transition whitespace-nowrap flex items-center gap-2"><i class="fas fa-location-dot"></i> LOCATIONS</a>
+                </div>
+                <!-- testimonial compact -->
+                <div class="bg-white p-6 rounded-3xl shadow-lg italic border-l-4 border-green-700"><i class="fas fa-quote-left text-green-700 text-xl mr-2"></i> “Clean Air Lawn Care made my lawn look amazing. Highly recommend.” <span class="block font-bold mt-2 text-gray-700">— JANE D. · 5 STARS</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION & ABOUT (dynamic) -->
+    <section class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-16">
+        <div class="bg-[#d5e8da] rounded-4xl p-10 md:p-14 grid md:grid-cols-2 gap-10 items-center">
+            <div>
+                <span class="inline-flex items-center gap-2 bg-green-800 text-white px-5 py-2 rounded-full text-sm font-bold"><i class="fas fa-map-pin"></i> FIND US</span>
+                <h2 class="text-4xl md:text-5xl font-black text-green-900 leading-tight mt-4">Find A Clean Air Location Near You</h2>
+                <p class="text-gray-800 text-lg mt-4">With 50+ locations coast to coast, we're your neighborhood's healthiest lawn team. Organic, quiet, sustainable.</p>
+                <a href="#" class="inline-flex items-center gap-2 mt-6 bg-green-900 text-white px-8 py-4 rounded-full font-bold hover:bg-green-800 transition shadow-xl"><i class="fas fa-arrow-right"></i> LEARN MORE</a>
+                <div class="flex gap-6 mt-8 text-green-900"><span><i class="fas fa-building"></i> 40+ CITIES</span><span><i class="fas fa-star"></i> 5-STAR BUSINESS</span></div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <img src="https://cleanairlawncare.com/wp-content/uploads/2024/09/Kid-Safe-lawn-fertilization.webp?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="rounded-2xl shadow-xl h-44 object-cover w-full">
+                <img src="https://cleanairlawncare.com/wp-content/uploads/2024/09/Kid-Safe-lawn-fertilization.webp?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="rounded-2xl shadow-xl h-44 object-cover w-full mt-8">
+            </div>
+        </div>
+    </section>
+
+    <!-- SEASONAL CALENDAR + BLOG (no emoji) -->
+    <section class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 pb-20">
+        <div class="text-center mb-10">
+            <span class="inline-flex items-center gap-2 bg-green-200 text-green-900 px-5 py-2.5 rounded-full text-sm font-bold"><i class="fas fa-calendar-alt"></i> SEASONAL SCHEDULE</span>
+            <h3 class="text-3xl md:text-4xl font-black mt-4">When Is Lawn Care Available?</h3>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
+            <div class="bg-white shadow-lg p-5 rounded-2xl flex items-center gap-3"><i class="fas fa-seedling text-2xl text-green-700"></i><span class="font-bold">SPRING</span></div>
+            <div class="bg-white shadow-lg p-5 rounded-2xl flex items-center gap-3"><i class="fas fa-sun text-2xl text-amber-500"></i><span class="font-bold">SUMMER</span></div>
+            <div class="bg-white shadow-lg p-5 rounded-2xl flex items-center gap-3"><i class="fas fa-leaf text-2xl text-orange-700"></i><span class="font-bold">FALL</span></div>
+            <div class="bg-white shadow-lg p-5 rounded-2xl flex items-center gap-3"><i class="fas fa-snowflake text-2xl text-sky-500"></i><span class="font-bold">WINTER</span></div>
+        </div>
+        <!-- blog card -->
+        <div class="bg-green-900 text-white p-10 rounded-4xl flex flex-col md:flex-row justify-between items-center gap-6 shadow-2xl">
+            <div class="flex items-center gap-4"><i class="fas fa-blog text-5xl text-lime-300"></i><div><span class="text-lime-300 font-bold">FEATURED BLOG</span><h4 class="text-2xl font-bold mt-1">When To Schedule Lawn Care: A Season-By-Season Guide</h4></div></div>
+            <a href="#" class="bg-lime-300 text-green-900 px-8 py-4 rounded-full font-bold hover:bg-lime-200 transition text-lg whitespace-nowrap flex items-center gap-2"><i class="fas fa-book-open"></i> READ THE BLOG</a>
+        </div>
+    </section>
+
+    <!-- FRANCHISE CTA -->
+    <section class="bg-gradient-to-r from-green-900 to-green-800 text-white py-16">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-4"><i class="fas fa-handshake text-5xl text-lime-300"></i><div><h3 class="text-3xl md:text-4xl font-black">Own A Green Franchise.</h3><p class="text-lg opacity-90">Love what Clean Air stands for? Explore cities across the U.S.</p></div></div>
+            <a href="#" class="bg-lime-300 text-green-900 px-10 py-5 rounded-full font-bold text-xl shadow-2xl hover:bg-lime-200 transition flex items-center gap-2"><i class="fas fa-arrow-trend-up"></i> EXPLORE OPPORTUNITIES</a>
+        </div>
+    </section>
+
+    <!-- FOOTER (cleaned, no lowercase, icons) -->
+    <footer class="bg-[#10231a] text-gray-300 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 grid grid-cols-2 md:grid-cols-5 gap-8">
+            <div><h5 class="text-white font-bold mb-4 flex items-center gap-1"><i class="fas fa-sitemap"></i> EXPLORE</h5><ul class="space-y-2 text-sm"><li><a href="#" class="hover:text-white">HOME</a></li><li><a href="#" class="hover:text-white">SERVICES</a></li><li><a href="#" class="hover:text-white">LOCATIONS</a></li><li><a href="#" class="hover:text-white">ABOUT US</a></li></ul></div>
+            <div><h5 class="text-white font-bold mb-4 flex items-center gap-1"><i class="fas fa-briefcase"></i> FRANCHISE</h5><ul class="space-y-2 text-sm"><li><a href="#" class="hover:text-white">OWNERSHIP</a></li><li><a href="#" class="hover:text-white">CONTACT</a></li><li><a href="#" class="hover:text-white">GET QUOTE</a></li><li><a href="#" class="hover:text-white">BLOG</a></li></ul></div>
+            <div><h5 class="text-white font-bold mb-4 flex items-center gap-1"><i class="fas fa-scale-balanced"></i> LEGAL</h5><ul class="space-y-2 text-sm"><li><a href="#" class="hover:text-white">PRIVACY</a></li><li><a href="#" class="hover:text-white">TERMS</a></li></ul></div>
+            <div class="col-span-2 md:col-span-2">
+                <h5 class="text-white font-bold mb-3 flex items-center gap-1"><i class="fas fa-leaf"></i> SUSTAINABLE LAWN CARE</h5>
+                <p class="text-sm">Family & pet safe · solar powered · organic soil builders</p>
+                <div class="flex flex-wrap gap-4 text-2xl mt-5 footer-social">
+                    <a href="#" class="hover:text-white"><i class="fab fa-facebook"></i></a><a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a><a href="#" class="hover:text-white"><i class="fab fa-twitter"></i></a><a href="#" class="hover:text-white"><i class="fab fa-linkedin"></i></a><a href="#" class="hover:text-white"><i class="fab fa-youtube"></i></a><a href="#" class="hover:text-white"><i class="fab fa-tiktok"></i></a><a href="#" class="hover:text-white"><i class="fab fa-pinterest"></i></a><a href="#" class="hover:text-white"><i class="fab fa-reddit"></i></a><a href="#" class="hover:text-white"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <p class="text-xs text-gray-500 mt-6">© 2026 CLEAN AIR LAWN CARE. ALL RIGHTS RESERVED. ORGANIC, ECO-FRIENDLY, ZERO-EMISSION MOWING.</p>
+            </div>
+        </div>
+    </footer>
+</main>
+</body>
+</html>
