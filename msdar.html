@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>MSDAR | Digital Architecture Studio</title>
+  <!-- Google Fonts: Inter + Playfair Display -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS v3 + Advanced utilities -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom Tailwind Configuration Override (theme extension) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            'serif': ['Playfair Display', 'ui-serif', 'Georgia', 'serif'],
+          },
+          colors: {
+            'arch-dark': '#050505',
+            'arch-gold': '#d4af37',
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            'scale-in': 'scaleIn 0.5s ease forwards',
+            'slow-zoom': 'slowZoom 20s ease-in-out infinite alternate',
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(40px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            scaleIn: {
+              '0%': { opacity: '0', transform: 'scale(0.95)' },
+              '100%': { opacity: '1', transform: 'scale(1)' },
+            },
+            slowZoom: {
+              '0%': { transform: 'scale(1)' },
+              '100%': { transform: 'scale(1.08)' },
+            },
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    /* custom global overrides and smooth scroll behavior */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #050505;
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0f0f0f;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #d4af37;
+      border-radius: 8px;
+    }
+
+    /* Nav pill style */
+    .nav-pill {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 100px;
+      padding: 8px 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      background: transparent;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(2px);
+      cursor: pointer;
+      display: inline-block;
+    }
+    .nav-pill:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.5);
+      transform: translateY(-1px);
+    }
+    .nav-pill.active {
+      background-color: #ffffff;
+      color: #050505;
+      border-color: #ffffff;
+    }
+
+    /* image hover mask effect */
+    .portfolio-grid-item {
+      transition: transform 0.4s ease;
+    }
+    .portfolio-img {
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .portfolio-item:hover .portfolio-img {
+      transform: scale(1.05);
+    }
+    .portfolio-overlay {
+      background: rgba(0, 0, 0, 0.5);
+      transition: opacity 0.4s ease;
+    }
+    .group:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    /* form input styles */
+    .input-line {
+      background: transparent;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+    .input-line:focus {
+      border-bottom-color: #d4af37;
+      outline: none;
+    }
+
+    /* reveal animation on scroll */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-on-scroll.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* blend mode navigation */
+    .mix-blend-diff {
+      mix-blend-mode: difference;
+    }
+
+    @media (max-width: 768px) {
+      .nav-pill {
+        padding: 6px 14px;
+        font-size: 0.7rem;
+      }
+    }
+  </style>
+</head>
+<body class="bg-arch-dark text-white antialiased">
+
+  <!-- ========== MAIN WEBSITE STRUCTURE (Single Page) ========== -->
+  <div id="app-root">
+    
+    <!-- FIXED NAVIGATION -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-5 flex justify-between items-center mix-blend-diff">
+      <div class="font-serif text-2xl md:text-3xl tracking-widest uppercase font-semibold text-white drop-shadow-sm">
+        MSDAR
+      </div>
+      <div class="hidden md:flex gap-3">
+        <a href="#work" class="nav-pill">Rendering</a>
+        <a href="#bim" class="nav-pill">BIM Documentation</a>
+        <a href="#green" class="nav-pill">Green Energy</a>
+        <a href="#contact" class="nav-pill">Contact</a>
+      </div>
+      <button id="mobileMenuBtn" class="md:hidden nav-pill text-sm">Menu</button>
+    </nav>
+
+    <!-- Mobile drawer menu (simple overlay) -->
+    <div id="mobileDrawer" class="fixed inset-0 z-50 bg-arch-dark/95 backdrop-blur-lg transform translate-x-full transition-transform duration-300 md:hidden flex flex-col items-center justify-center gap-8 text-xl">
+      <button id="closeDrawer" class="absolute top-6 right-6 text-3xl">&times;</button>
+      <a href="#work" class="nav-pill text-lg py-3">Rendering</a>
+      <a href="#bim" class="nav-pill text-lg py-3">BIM Documentation</a>
+      <a href="#green" class="nav-pill text-lg py-3">Green Energy</a>
+      <a href="#contact" class="nav-pill text-lg py-3">Contact</a>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="relative h-screen flex flex-col justify-between px-6 pt-32 pb-12 overflow-hidden">
+      <div class="absolute inset-0 -z-10">
+        <div class="w-full h-full">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop" alt="hero background" class="w-full h-full object-cover opacity-40 animate-slow-zoom">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/60 to-black/90"></div>
+      </div>
+      
+      <div class="max-w-5xl mt-16">
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-light leading-[0.9] tracking-tight mb-8 opacity-0 animate-[fadeInUp_0.8s_ease_forwards]">
+          Digital<br />Architecture.
+        </h1>
+        <div class="max-w-xl text-white/70 font-light text-lg md:text-xl leading-relaxed opacity-0 animate-[fadeInUp_0.8s_ease_0.2s_forwards]">
+          MSDar is a specialized studio that produces high-end architectural visualizations since 1997. We are architects who understand the needs of a good image to show the original architect design.
+        </div>
+      </div>
+
+      <div class="flex justify-between items-end border-t border-white/20 pt-6 mt-12 opacity-0 animate-[fadeInUp_0.8s_ease_0.4s_forwards]">
+        <div class="text-sm tracking-widest uppercase text-white/50">Est. 1997</div>
+        <a href="#contact" class="flex items-center gap-2 group hover:text-white transition-colors">
+          <span class="text-sm uppercase tracking-wider text-white/70 group-hover:text-white">Discuss your project</span>
+          <span class="p-3 rounded-full border border-white/20 group-hover:w-12 group-hover:bg-white group-hover:text-black transition-all flex justify-center items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="py-24 px-6 max-w-7xl mx-auto reveal-on-scroll">
+      <div class="grid md:grid-cols-2 gap-16 items-start">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-serif font-light mb-8">Renderings · BIM · Design and technical documentation</h2>
+          <p class="text-white/60 font-light leading-relaxed whitespace-pre-line mb-8">
+            MSDar is a team of professional architects specializing in creating high-level architectural images and animations since 1997.<br><br>
+            Our focus extends to architectural studios, construction professionals, landscape designers, interior designers and renewable energy professionals, among others.
+          </p>
+          <a href="#contact" class="nav-pill inline-block">Learn More</a>
+        </div>
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2027&auto=format&fit=crop" alt="Studio workspace" class="w-full aspect-[3/4] object-cover rounded-sm grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl">
+          <div class="absolute -bottom-8 -left-8 bg-arch-dark p-8 border border-white/10 hidden md:block backdrop-blur-sm">
+            <div class="text-5xl font-serif mb-2 text-arch-gold">18+</div>
+            <div class="text-xs uppercase tracking-widest text-white/50">Years of Expertise</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION with filter (vanilla JS filter) -->
+    <section id="work" class="py-24 px-6 border-t border-white/10">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
+        <h2 class="text-4xl md:text-5xl font-serif font-light">Selected Work</h2>
+        <div id="filterContainer" class="flex flex-wrap gap-3"></div>
+      </div>
+      <div id="portfolioGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    </section>
+
+    <!-- BIM SECTION -->
+    <section id="bim" class="py-24 px-6 bg-white text-arch-dark reveal-on-scroll">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div class="order-2 md:order-1">
+          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2662&auto=format&fit=crop" alt="BIM" class="w-full aspect-square object-cover rounded-sm shadow-xl">
+        </div>
+        <div class="order-1 md:order-2">
+          <div class="text-xs uppercase tracking-widest text-black/50 mb-4 font-semibold">Technical Expertise</div>
+          <h2 class="text-4xl md:text-5xl font-serif mb-8 leading-tight">Comprehensive BIM &<br/>Documentation Solutions</h2>
+          <p class="text-black/70 font-light leading-relaxed mb-8">
+            Studio DUV offers comprehensive solutions and support tailored to architectural firms, interior design studios, and construction companies. Specializing in design and technical documentation outsourcing services, our mission is to streamline your workflow and enhance efficiency.
+          </p>
+          <p class="text-black/70 font-light leading-relaxed mb-8">
+            We understand the challenges of maintaining an in-house team and the weight of strategic decisions. That's where we step in, providing access to our highly skilled team on-demand.
+          </p>
+          <a href="#contact" class="inline-block border border-black/20 rounded-full px-6 py-3 text-sm font-medium hover:bg-black hover:text-white transition-colors">Explore Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GREEN ENERGY SECTION -->
+    <section id="green" class="py-24 px-6 border-t border-white/10 reveal-on-scroll">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+        <div>
+          <div class="text-xs uppercase tracking-widest text-arch-gold mb-4 font-semibold">Sustainable Design</div>
+          <h2 class="text-4xl md:text-5xl font-serif mb-8 leading-tight">Green Energy &<br/>Sustainable Architecture</h2>
+          <p class="text-white/60 font-light leading-relaxed mb-8">
+            Our focus extends to renewable energy professionals, integrating sustainable design practices and visualizing green energy solutions. We help communicate the environmental impact and aesthetic integration of sustainable technologies seamlessly into architectural forms.
+          </p>
+          <div class="grid grid-cols-2 gap-8 border-t border-white/10 pt-8 mt-8">
+            <div><div class="text-3xl font-serif font-light mb-2 text-arch-gold">Solar</div><div class="text-sm text-white/50">Integration planning</div></div>
+            <div><div class="text-3xl font-serif font-light mb-2 text-arch-gold">LEED</div><div class="text-sm text-white/50">Certification visuals</div></div>
+          </div>
+        </div>
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?q=80&w=2689&auto=format&fit=crop" alt="Green Energy" class="w-full aspect-[4/3] object-cover rounded-sm shadow-2xl">
+          <div class="absolute inset-0 bg-gradient-to-t from-arch-dark to-transparent opacity-40 rounded-sm"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & FOOTER -->
+    <footer id="contact" class="py-24 px-6 border-t border-white/10 relative">
+      <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/5 to-transparent pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 mb-24 relative z-10">
+        <div>
+          <h2 class="text-5xl md:text-7xl font-serif font-light mb-8">Let's discuss<br/>your project.</h2>
+          <a href="mailto:msdarcom@aol.com" class="text-2xl font-light hover:text-white/70 transition-colors border-b border-white/20 pb-1 inline-block">msdarcom@aol.com</a>
+          <div class="mt-16 flex gap-4">
+            <a href="#" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a4 4 0 0 0-4 4v3H7v4h4v8h4v-8h4l1-4h-5V6a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <form id="contactForm" class="space-y-6">
+            <div><label class="block text-xs uppercase tracking-widest text-white/50 mb-2">Name</label><input type="text" id="contactName" class="w-full bg-transparent border-b border-white/20 pb-2 text-white focus:border-arch-gold transition-colors outline-none"></div>
+            <div><label class="block text-xs uppercase tracking-widest text-white/50 mb-2">Email</label><input type="email" id="contactEmail" class="w-full bg-transparent border-b border-white/20 pb-2 text-white focus:border-arch-gold transition-colors outline-none"></div>
+            <div><label class="block text-xs uppercase tracking-widest text-white/50 mb-2">Message</label><textarea rows="4" id="contactMsg" class="w-full bg-transparent border-b border-white/20 pb-2 text-white focus:border-arch-gold transition-colors resize-none outline-none"></textarea></div>
+            <button type="submit" class="nav-pill mt-4">Send Message</button>
+            <p id="formFeedback" class="text-xs text-arch-gold mt-2"></p>
+          </form>
+        </div>
+      </div>
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-white/40 text-sm">
+        <p>© 2024 MSDAR.</p>
+        <p>web design by <a href="#" class="hover:text-white transition-colors">NJP</a> · rebuilt with advanced HTML5/JS</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // ------------- PORTFOLIO DATA & FILTER LOGIC (JS) -------------
+    const portfolioItems = [
+      { title: 'Glass Pavilion', category: 'Exteriors', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop' },
+      { title: 'Modern Interior', category: 'Interiors', image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop' },
+      { title: 'Urban Masterplan', category: 'Aerials', image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop' },
+      { title: 'Material Detail', category: 'Close ups', image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2069&auto=format&fit=crop' },
+      { title: 'Villa Exterior', category: 'Exteriors', image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop' },
+      { title: 'Minimalist Kitchen', category: 'Interiors', image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop' },
+    ];
+    const filters = ['All', 'Aerials', 'Exteriors', 'Interiors', 'Close ups', 'Technical'];
+    let activeFilter = 'All';
+
+    function renderPortfolio() {
+      const filtered = activeFilter === 'All' ? portfolioItems : portfolioItems.filter(item => item.category === activeFilter);
+      const grid = document.getElementById('portfolioGrid');
+      if (!grid) return;
+      grid.innerHTML = filtered.map((item, idx) => `
+        <div class="portfolio-item group cursor-pointer reveal-on-scroll" data-category="${item.category}">
+          <div class="overflow-hidden rounded-sm mb-4 bg-white/5 relative">
+            <img src="${item.image}" alt="${item.title}" class="portfolio-img" loading="lazy">
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+              <span class="p-4 rounded-full bg-white text-black transform scale-50 group-hover:scale-100 transition-transform duration-500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+              </span>
+            </div>
+          </div>
+          <div class="flex justify-between items-baseline">
+            <h3 class="font-medium text-lg">${item.title}</h3>
+            <span class="text-xs uppercase tracking-wider text-white/40">${item.category}</span>
+          </div>
+        </div>
+      `).join('');
+      // reinit scroll reveal for newly added items
+      initScrollReveal();
+    }
+
+    function renderFilterButtons() {
+      const container = document.getElementById('filterContainer');
+      if (!container) return;
+      container.innerHTML = filters.map(filter => `
+        <button data-filter="${filter}" class="nav-pill ${activeFilter === filter ? 'active' : ''}">${filter}</button>
+      `).join('');
+      document.querySelectorAll('#filterContainer .nav-pill').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const filterVal = btn.getAttribute('data-filter');
+          activeFilter = filterVal;
+          renderFilterButtons();
+          renderPortfolio();
+        });
+      });
+    }
+
+    // ---------- SCROLL REVEAL (Intersection Observer) ----------
+    function initScrollReveal() {
+      const elements = document.querySelectorAll('.reveal-on-scroll');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      elements.forEach(el => observer.observe(el));
+    }
+
+    // Mobile drawer
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const drawer = document.getElementById('mobileDrawer');
+    const closeDrawer = document.getElementById('closeDrawer');
+    if (mobileBtn && drawer && closeDrawer) {
+      mobileBtn.addEventListener('click', () => {
+        drawer.classList.remove('translate-x-full');
+        drawer.classList.add('translate-x-0');
+      });
+      closeDrawer.addEventListener('click', () => {
+        drawer.classList.add('translate-x-full');
+        drawer.classList.remove('translate-x-0');
+      });
+      document.querySelectorAll('#mobileDrawer a').forEach(link => {
+        link.addEventListener('click', () => {
+          drawer.classList.add('translate-x-full');
+          drawer.classList.remove('translate-x-0');
+        });
+      });
+    }
+
+    // Contact form handling (advanced JS)
+    const contactForm = document.getElementById('contactForm');
+    const feedback = document.getElementById('formFeedback');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('contactName')?.value.trim();
+        const email = document.getElementById('contactEmail')?.value.trim();
+        const message = document.getElementById('contactMsg')?.value.trim();
+        if (!name || !email || !message) {
+          feedback.textContent = '⚠️ Please fill all fields.';
+          feedback.style.color = '#d4af37';
+          return;
+        }
+        if (!email.includes('@') || !email.includes('.')) {
+          feedback.textContent = '❌ Please enter a valid email address.';
+          return;
+        }
+        feedback.textContent = '✨ Thank you! We’ll get back to you soon.';
+        feedback.style.color = '#d4af37';
+        contactForm.reset();
+        setTimeout(() => { feedback.textContent = ''; }, 4000);
+      });
+    }
+
+    // Smooth anchor scroll with offset
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          const offset = 80;
+          const elementPosition = targetEl.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({ top: elementPosition - offset, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Set active nav highlight on scroll? (enhancement: subtle)
+    function updateActiveNav() {
+      const sections = ['work', 'bim', 'green', 'contact'];
+      let current = '';
+      for (let sec of sections) {
+        const element = document.getElementById(sec);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 150 && rect.bottom >= 100) {
+            current = sec;
+            break;
+          }
+        }
+      }
+      document.querySelectorAll('nav a.nav-pill').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
+      });
+    }
+    window.addEventListener('scroll', () => { requestAnimationFrame(updateActiveNav); });
+    
+    // ---- Initialize everything ----
+    renderFilterButtons();
+    renderPortfolio();
+    initScrollReveal();
+    updateActiveNav();
+
+    // Additional hero image smooth zoom animation enhancement
+    const heroBg = document.querySelector('.animate-slow-zoom');
+    if(heroBg) heroBg.style.animation = 'slowZoom 20s infinite alternate';
+    
+    // add hover parallax effect (advanced)
+    const portfolioImages = document.querySelectorAll('.portfolio-img');
+    // just for progressive enhancement
+    console.log('MSDAR Clone - Advanced Website Loaded');
+  </script>
+</body>
+</html>
