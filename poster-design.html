@@ -414,7 +414,7 @@
                         <div class="main-headline" style="font-size: 44px;">IN THE NEXT</div>
                         
                         <!-- Position text - simple text without shape/box -->
-                        <div class="position-text" id="defaultPositionDisplay">UPAZILA ELECTION BOARD</div>
+                        <div class="position-text" id="defaultPositionDisplay">UPAZILA BOARD</div>
                         
                         <!-- Custom position wrapper - shows below when checkbox is checked with "AS" prefix -->
                         <div id="customPositionWrapper" class="custom-position-wrapper" style="display: none;">
@@ -534,7 +534,7 @@
         candidateNameDisplay.innerText = candidate;
         upazilaDisplay.innerText = upazila;
         districtNameBottom.innerText = district;
-        defaultPositionDisplay.innerText = "UPAZILA ELECTION BOARD";
+        defaultPositionDisplay.innerText = "UPAZILA BOARD";
         updateCustomPositionText();
         
         console.log("Text updated - Candidate:", candidate);
@@ -598,7 +598,7 @@
                 candidateNameDisplay.innerText = candidateRaw.toUpperCase();
                 upazilaDisplay.innerText = upazilaRaw.toUpperCase();
                 districtNameBottom.innerText = districtInput.value.trim().toUpperCase() || "DISTRICT";
-                defaultPositionDisplay.innerText = "UPAZILA ELECTION BOARD";
+                defaultPositionDisplay.innerText = "UPAZILA BOARD";
                 updateCustomPositionText();
                 console.log("AI enhancement successful");
             } else {
