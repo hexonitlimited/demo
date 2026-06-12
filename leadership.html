@@ -1,508 +1,504 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Leadership & Teamwork: From Volunteer to Leader | Impact Skills Program</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Digital Marketing + Professional Skills: 130-Question MCQ Exam</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(145deg, #e0e7ff 0%, #f3f4f6 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 2rem 1rem;
-        }
+    body {
+      background: linear-gradient(145deg, #f0f5fe 0%, #e9f0fa 100%);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      padding: 2rem 1.5rem;
+      color: #0a2540;
+    }
 
-        /* Presentation container */
-        .presentation-container {
-            max-width: 1280px;
-            width: 100%;
-            background: #ffffff;
-            border-radius: 2rem;
-            box-shadow: 0 25px 45px -12px rgba(0,0,0,0.3);
-            overflow: hidden;
-            transition: all 0.2s;
-        }
+    .exam-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 2rem;
+      box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+    }
 
-        /* Slides area */
-        .slides-wrapper {
-            position: relative;
-            background: #fff;
-        }
+    .header {
+      background: #0f2b3d;
+      padding: 1.8rem 2rem;
+      color: white;
+      border-bottom: 4px solid #f9ab00;
+    }
 
-        .slide {
-            display: none;
-            padding: 2.5rem 2.8rem;
-            animation: fadeSlide 0.35s ease;
-            background: white;
-        }
+    .header h1 {
+      font-size: 1.9rem;
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
 
-        .slide.active {
-            display: block;
-        }
+    .header h1 span {
+      background: #f9ab00;
+      color: #0f2b3d;
+      font-size: 1.3rem;
+      font-weight: 700;
+      padding: 0.2rem 0.8rem;
+      border-radius: 60px;
+    }
 
-        @keyframes fadeSlide {
-            from { opacity: 0; transform: translateY(12px);}
-            to { opacity: 1; transform: translateY(0);}
-        }
+    .stats-bar {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+      background: #1e3a4d;
+      padding: 0.8rem 1.2rem;
+      border-radius: 40px;
+    }
 
-        /* Slide content styles */
-        h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #1E3C72, #2A5298);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 1rem;
-        }
+    .stats-bar p {
+      font-weight: 500;
+      background: rgba(255,255,255,0.1);
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+    }
 
-        h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            border-left: 6px solid #f59e0b;
-            padding-left: 1rem;
-            margin: 1rem 0 1rem 0;
-            color: #1e293b;
-        }
+    .reset-btn {
+      background: #f9ab00;
+      border: none;
+      color: #0f2b3d;
+      font-weight: bold;
+      padding: 0.4rem 1.3rem;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: 0.2s;
+    }
 
-        h3 {
-            font-weight: 600;
-            font-size: 1.5rem;
-            margin: 1rem 0 0.5rem;
-            color: #0f172a;
-        }
+    .reset-btn:hover {
+      background: #ffc34d;
+      transform: scale(0.97);
+    }
 
-        .subhead {
-            font-size: 1.2rem;
-            color: #334155;
-            margin-bottom: 1.5rem;
-        }
+    .questions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(540px, 1fr));
+      gap: 1.6rem;
+      padding: 2rem 2rem;
+      background: #ffffff;
+    }
 
-        .card-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
+    .question-card {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      border: 1px solid #e2edf7;
+      transition: all 0.2s ease;
+      overflow: hidden;
+    }
 
-        .card {
-            background: #f8fafc;
-            border-radius: 1.5rem;
-            padding: 1.2rem 1.5rem;
-            flex: 1 1 200px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.02);
-            border: 1px solid #e2e8f0;
-            transition: 0.2s;
-        }
+    .question-header {
+      background: #f8fafd;
+      padding: 1rem 1.3rem;
+      border-bottom: 2px solid #e9f0f5;
+      font-weight: 700;
+      font-size: 1rem;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
 
-        .badge {
-            display: inline-block;
-            background: #fef3c7;
-            color: #b45309;
-            padding: 0.3rem 1rem;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 0.8rem;
-            margin-bottom: 0.8rem;
-        }
+    .q-num {
+      background: #0f2b3d;
+      color: white;
+      border-radius: 30px;
+      padding: 0.2rem 0.7rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
 
-        .interactive-bubble {
-            background: #eef2ff;
-            border-radius: 1rem;
-            padding: 1rem 1.5rem;
-            margin: 1.5rem 0;
-            border-left: 5px solid #3b82f6;
-        }
+    .q-text {
+      color: #0a2b3b;
+      line-height: 1.4;
+      font-size: 0.95rem;
+    }
 
-        .poll-option {
-            background: white;
-            border-radius: 60px;
-            border: 1px solid #cbd5e1;
-            padding: 0.5rem 1.2rem;
-            margin: 0.5rem 0;
-            cursor: pointer;
-            transition: 0.1s;
-            display: inline-block;
-            margin-right: 0.8rem;
-        }
+    .options {
+      padding: 1rem 1.3rem 0.5rem 1.3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
 
-        .poll-option:hover {
-            background: #d9e6ff;
-            border-color: #3b82f6;
-        }
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #fefefe;
+      padding: 0.5rem 0.8rem;
+      border-radius: 60px;
+      border: 1px solid #e2edf2;
+      transition: 0.1s;
+      cursor: pointer;
+    }
 
-        .score-row {
-            display: flex;
-            justify-content: space-between;
-            margin: 0.8rem 0;
-            padding: 0.5rem;
-            border-bottom: 1px solid #e2e8f0;
-        }
+    .option-item:hover {
+      background: #f3f9ff;
+      border-color: #bdd9e8;
+    }
 
-        .rate-stars i {
-            color: #facc15;
-            margin: 0 2px;
-        }
+    input[type="radio"] {
+      accent-color: #0f6b4a;
+      width: 17px;
+      height: 17px;
+      cursor: pointer;
+    }
 
-        button.nav-btn {
-            background: #1e293b;
-            border: none;
-            color: white;
-            padding: 0.7rem 1.8rem;
-            border-radius: 40px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.2s;
-            margin: 0 0.3rem;
-            font-size: 0.9rem;
-        }
+    .option-letter {
+      font-weight: 700;
+      color: #2c6e9e;
+      min-width: 28px;
+      font-size: 0.9rem;
+    }
 
-        button.nav-btn:hover {
-            background: #0f172a;
-            transform: scale(0.97);
-        }
+    .option-text {
+      font-size: 0.88rem;
+      color: #1f3b4a;
+      flex: 1;
+    }
 
-        .slide-progress {
-            background: #e2e8f0;
-            height: 6px;
-            width: 100%;
-        }
+    .feedback {
+      margin: 0.5rem 1.3rem 1rem 1.3rem;
+      font-size: 0.82rem;
+      padding: 0.55rem 1rem;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      border-left: 4px solid #9aaeb9;
+    }
 
-        .progress-fill {
-            background: #f59e0b;
-            width: 0%;
-            height: 100%;
-            transition: width 0.2s;
-        }
+    .feedback.correct {
+      background: #e0f7e9;
+      border-left-color: #2b7e4b;
+      color: #145c33;
+    }
 
-        .trainer-note {
-            background: #fef9e6;
-            padding: 1rem 1.2rem;
-            border-radius: 1rem;
-            margin-top: 1.8rem;
-            font-size: 0.9rem;
-            color: #5b4b2c;
-            border-left: 4px solid #f59e0b;
-        }
+    .feedback.wrong {
+      background: #ffeae9;
+      border-left-color: #c23d2b;
+      color: #a03422;
+    }
 
-        .footer-controls {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            background: #f1f5f9;
-            border-top: 1px solid #cbd5e1;
-        }
+    .feedback.neutral {
+      background: #f4f7fb;
+      border-left-color: #9aaeb9;
+      color: #2c4e6b;
+    }
 
-        @media (max-width: 700px) {
-            .slide {
-                padding: 1.5rem;
-            }
-            h2 {
-                font-size: 1.5rem;
-            }
-        }
+    .footer {
+      background: #f1f6fc;
+      padding: 1.2rem 2rem;
+      text-align: center;
+      border-top: 1px solid #dce7f0;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
 
-        .chat-sim {
-            background: #f1f5f9;
-            border-radius: 1rem;
-            padding: 1rem;
-            font-family: monospace;
-        }
-        i.fa, i.far, i.fas {
-            margin-right: 8px;
-        }
-    </style>
+    @media (max-width: 680px) {
+      .questions-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+      }
+      body {
+        padding: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-
-<div class="presentation-container">
-    <div class="slides-wrapper" id="slidesContainer">
-        <!-- ========================= SLIDE 1 ========================= -->
-        <div class="slide active" data-index="0">
-            <span class="badge"><i class="fas fa-chalkboard-user"></i> Impact Skills Program</span>
-            <h1>Leadership & Teamwork:<br>From Volunteer to Leader</h1>
-            <p class="subhead"><i class="fas fa-clock"></i> 90 min • Interactive • Action-driven</p>
-            <div class="interactive-bubble">
-                <i class="fas fa-lightbulb"></i> <strong>Core message:</strong> Leadership is not a position. Leadership is taking responsibility and creating positive impact.
-            </div>
-            <div class="trainer-note">
-                📌 <strong>Trainer script:</strong> “Welcome everyone! Even with cameras off, your energy matters. Today we’ll move, reflect, and lead. Get ready to engage via chat & polls!”
-            </div>
-            <div class="interactive-bubble">
-                <i class="fas fa-comment-dots"></i> <strong>Icebreaker (Chat):</strong> “Who is a leader you admire and why? Type in chat now!”
-            </div>
-        </div>
-
-        <!-- SLIDE 2 - leadership admiration & myths -->
-        <div class="slide" data-index="1">
-            <h2>🌟 Leaders we admire</h2>
-            <p>Chat insights: "Mother Teresa – service", "Elon – vision", "Local teacher – patience"<br> <strong>Myth:</strong> Leaders need titles → FALSE.</p>
-            <div class="card-grid">
-                <div class="card"><i class="fas fa-crown"></i> <strong>Authority</strong><br>Given by hierarchy</div>
-                <div class="card"><i class="fas fa-hand-fist"></i> <strong>Leadership</strong><br>Earned by action</div>
-            </div>
-            <div class="trainer-note">🗣️ Script: “Great examples! Notice how many had no formal position but inspired change. Leadership starts NOW.” <br> 💬 Interaction: “Give a 👍 if you agree leadership is action, not title.”</div>
-        </div>
-
-        <!-- SLIDE 3: Why leadership matters -->
-        <div class="slide" data-index="2">
-            <h2>🎯 Why leadership matters</h2>
-            <div class="card-grid">
-                <div class="card"><i class="fas fa-university"></i> University: group projects, clubs</div>
-                <div class="card"><i class="fas fa-hand-holding-heart"></i> Volunteerism: VBD projects</div>
-                <div class="card"><i class="fas fa-briefcase"></i> Career: promotions, teamwork</div>
-                <div class="card"><i class="fas fa-heart"></i> Life: family, community</div>
-            </div>
-            <div class="interactive-bubble"><i class="fas fa-cloud-upload-alt"></i> <strong>Chat Storm:</strong> “Where do leadership skills help most? Drop 1 word in chat!”</div>
-            <div class="trainer-note">🎙️ Script: “From organizing a blood donation to leading a study group — leadership multiplies impact. Share fast!”</div>
-        </div>
-
-        <!-- SLIDE 4: Leadership vs Authority -->
-        <div class="slide" data-index="3">
-            <h2>⚖️ Leadership VS Authority</h2>
-            <p><strong>Position</strong> = power given. <strong>Influence</strong> = power earned.</p>
-            <div class="interactive-bubble"><i class="fas fa-theater-masks"></i> <strong>Scenario:</strong> A volunteer notices food shortage at a VBD event, no coordinator around. They arrange extra supplies and communicate with vendors. Was this leadership? Why?</div>
-            <div class="trainer-note">💡 Script: “Click raise hand or type YES/NO in chat. This is the heart of titleless leadership.”</div>
-            <div class="poll-option" onclick="alert('✅ Great! In chat discuss: initiative defines leadership.')">💬 Vote: Yes, leadership!</div>
-        </div>
-
-        <!-- SLIDE 5: Self-leadership first -->
-        <div class="slide" data-index="4">
-            <h2>🧭 Self-Leadership First</h2>
-            <p>Responsibility • Discipline • Accountability • Commitment</p>
-            <h3>Self-Assessment Scorecard (1–5)</h3>
-            <div class="score-row">Time Management: <span class="rate-stars" id="rateTM">⭐⭐⭐</span> <button class="nav-btn" style="background:#334155; padding:0.2rem 0.7rem;" onclick="updateRating('TM')">Rate</button></div>
-            <div class="score-row">Responsibility: <span class="rate-stars" id="rateRes">⭐⭐⭐</span> <button class="nav-btn" style="background:#334155;" onclick="updateRating('Res')">Rate</button></div>
-            <div class="score-row">Reliability: <span class="rate-stars" id="rateRel">⭐⭐⭐</span> <button class="nav-btn" style="background:#334155;" onclick="updateRating('Rel')">Rate</button></div>
-            <div class="score-row">Initiative: <span class="rate-stars" id="rateInit">⭐⭐⭐</span> <button class="nav-btn" style="background:#334155;" onclick="updateRating('Init')">Rate</button></div>
-            <div class="trainer-note">✍️ Reflection: What should I improve? Ask yourself and type in chat “My one growth area”.</div>
-        </div>
-
-        <!-- SLIDE 6: Leadership without a title case study -->
-        <div class="slide" data-index="5">
-            <h2>💪 Leadership Without a Title</h2>
-            <div class="card"><i class="fas fa-clipboard-list"></i> <strong>Case study:</strong> Volunteers notice a lack of waste bins at a river cleanup drive, no one assigned. It continues for 2 hours. What would you do?</div>
-            <div class="interactive-bubble">💬 <strong>Discussion (chat):</strong> “Type 1 action you would take to solve this.”</div>
-            <div class="trainer-note">🎤 Script: “Initiative is contagious. A volunteer who grabs empty bags and starts separating waste becomes a leader instantly.”</div>
-        </div>
-
-        <!-- SLIDE 7: Teamwork essentials -->
-        <div class="slide" data-index="6">
-            <h2>🤝 Teamwork Essentials</h2>
-            <div class="card-grid">
-                <div class="card"><i class="fas fa-handshake"></i> Trust</div>
-                <div class="card"><i class="fas fa-comments"></i> Communication</div>
-                <div class="card"><i class="fas fa-heart"></i> Respect</div>
-                <div class="card"><i class="fas fa-balance-scale"></i> Accountability</div>
-            </div>
-            <div class="interactive-bubble"><i class="fas fa-chart-line"></i> <strong>Team Failure Analysis:</strong> “Why do teams fail?” – share in chat!</div>
-            <div class="trainer-note">🗣️ Common answers: poor communication, lack of trust, unclear roles. Let’s avoid those.</div>
-        </div>
-
-        <!-- SLIDE 8: Four Player Model -->
-        <div class="slide" data-index="7">
-            <h2>🎭 Four Player Model</h2>
-            <div class="card-grid">
-                <div class="card"><i class="fas fa-rocket"></i> <strong>Mover</strong><br>Drives action</div>
-                <div class="card"><i class="fas fa-users"></i> <strong>Follower</strong><br>Supports execution</div>
-                <div class="card"><i class="fas fa-question-circle"></i> <strong>Opposer</strong><br>Challenges critically</div>
-                <div class="card"><i class="fas fa-eye-slash"></i> <strong>Bystander</strong><br>Disengaged</div>
-            </div>
-            <div class="interactive-bubble"><i class="fas fa-poll-h"></i> <strong>Poll (type in chat):</strong> Which role are you most often? Mover / Follower / Opposer / Bystander</div>
-            <div class="trainer-note">💡 Discuss strengths & risks: Opposer brings needed checks, Bystander loses opportunity.</div>
-        </div>
-
-        <!-- SLIDE 9: Communication & Conflict -->
-        <div class="slide" data-index="8">
-            <h2>🗣️ Communication & Conflict</h2>
-            <p>Active Listening • Respectful Disagreement</p>
-            <div class="interactive-bubble"><strong>Scenario:</strong> Two VBD volunteers disagree on an event layout – one wants stalls inside, the other outside. Team leader steps in. What should leader do?</div>
-            <div class="trainer-note">📢 Chat: “Type conflict resolution idea (listen, find middle ground, vote)”. Then share: “Seek interests not positions.”</div>
-            <div class="card">💡 Resolution framework: 1. Listen to both 2. Acknowledge 3. Propose hybrid solution.</div>
-        </div>
-
-        <!-- SLIDE 10: Leadership Challenge (7-day) -->
-        <div class="slide" data-index="9">
-            <h2>⏳ 7-Day Leadership Challenge</h2>
-            <div class="card"><i class="fas fa-check-circle"></i> Identify 1 problem you will solve this week (at home/college/volunteer project)<br>
-            <i class="fas fa-bolt"></i> 1 initiative you will take without being asked<br>
-            <i class="fas fa-chalkboard"></i> 1 leadership behavior (e.g., listening more, offering help)</div>
-            <div class="interactive-bubble">📝 <strong>Action:</strong> Write in your notebook / Google Keep. Share one intention in chat.</div>
-            <div class="trainer-note">🔥 Example: “I’ll lead the class cleanup, start a study group, or thank a teammate publicly.”</div>
-        </div>
-
-        <!-- SLIDE 11: Reflection & Commitment -->
-        <div class="slide" data-index="10">
-            <h2>✨ Reflection & Commitment</h2>
-            <div class="card-grid">
-                <div class="card">❓ What is one lesson you learned?</div>
-                <div class="card">📈 What is one habit you will improve?</div>
-                <div class="card">🌟 What kind of leader do you want to become?</div>
-            </div>
-            <div class="interactive-bubble"><i class="fas fa-pen-fancy"></i> Final task: Submit 150-word reflection (Google Form in chat) including: lesson learned, teamwork skill to improve, and leadership action within 7 days.</div>
-            <div class="trainer-note">📩 “Scan QR or link shared. This is your commitment to growth. We’ll follow up next session!”</div>
-        </div>
-
-        <!-- Additional slides for depth (12–14 to hit ~25 slide equivalent via trainer notes + dynamic but using core topics wrap) but also interactive moments spread. Let's add more scenario slides to reach 25 distinct interactive moments.
-        We'll add extra slides for more practice: Assessment and Scenario Analysis plus examples. -->
-        <!-- SLIDE 12: Real volunteer example Bangladesh -->
-        <div class="slide" data-index="11">
-            <h2>🇧🇩 Real Volunteer Example</h2>
-            <p>Sabrina, a VBD volunteer in Rajshahi, noticed that elderly people missed medical camps. Without any title, she mobilized 3 friends, arranged transport, and helped 20+ seniors attend camp.</p>
-            <div class="interactive-bubble">🤔 <strong>Discussion:</strong> How did she show leadership without authority? Chat responses.</div>
-            <div class="trainer-note">💎 Script: “Initiative, empathy, problem-solving. Anyone can spark change – you too.”</div>
-        </div>
-        <!-- SLIDE 13: Poll leadership qualities -->
-        <div class="slide" data-index="12">
-            <h2>📊 Poll: Leadership Qualities</h2>
-            <p>What's most important for a volunteer leader?</p>
-            <div class="poll-option" onclick="alert('Great! Empathy builds trust.')">❤️ Empathy</div>
-            <div class="poll-option" onclick="alert('Clarity avoids chaos.')">🗣️ Communication</div>
-            <div class="poll-option" onclick="alert('Bold moves create change.')">⚡ Initiative</div>
-            <div class="trainer-note">Use Google Meet poll or raise hand. This reveals priorities.</div>
-        </div>
-        <!-- SLIDE 14: Problem-solving model -->
-        <div class="slide" data-index="13">
-            <h2>🧩 Simple Problem-Solving</h2>
-            <p>1. Identify issue → 2. Brainstorm solutions → 3. Act & adapt</p>
-            <div class="interactive-bubble">Scenario: Team morale low before a big event. As a member, how would you solve? Chat ideas.</div>
-            <div class="trainer-note">✨ Acknowledge all inputs. Shift from problem-focused to solution-focused.</div>
-        </div>
-        <!-- SLIDE 15: Accountability pact -->
-        <div class="slide" data-index="14">
-            <h2>🤝 Accountability in Teams</h2>
-            <div class="card">“Accountability is keeping promises to yourself and teammates.”</div>
-            <div class="interactive-bubble">💪 Mini-activity: “Send a message to a peer in chat: 'I will be accountable for ____ this week.'”</div>
-            <div class="trainer-note">Encourage public commitment – increases follow-through.</div>
-        </div>
-        <!-- SLIDE 16: Overcoming hesitation -->
-        <div class="slide" data-index="15">
-            <h2>🚀 Overcoming “Not My Job”</h2>
-            <p>Leader’s mindset: “If it's to be, it's up to me.”</p>
-            <div class="interactive-bubble">What's stopping you from leading today? Write anonymous in chat (fear, lack of confidence). Let's break barriers.</div>
-            <div class="trainer-note">Normalize fear → action despite fear is courage.</div>
-        </div>
-        <!-- SLIDE 17: Trust building activity -->
-        <div class="slide" data-index="16">
-            <h2>🤝 Trust Battery</h2>
-            <p>Every interaction charges or drains trust. Identify one way you will charge a teammate’s trust this week.</p>
-            <div class="trainer-note">Chat: “I will __________ to build trust.” Example: listen actively, meet deadlines.</div>
-        </div>
-        <!-- SLIDE 18: Review learning outcomes -->
-        <div class="slide" data-index="17">
-            <h2>✅ Check: Learning Outcomes</h2>
-            <ul style="margin-left: 1.5rem;">
-                <li>✔️ Leadership vs authority</li>
-                <li>✔️ Self-leadership pillars</li>
-                <li>✔️ Natural team role (4 player)</li>
-                <li>✔️ Trust, communication, conflict tools</li>
-                <li>✔️ Initiative & action plan</li>
-            </ul>
-            <div class="trainer-note">Quick fist-to-five (in chat: number 1-5). Great mastery!</div>
-        </div>
-        <!-- SLIDE 19: Success stories -->
-        <div class="slide" data-index="18">
-            <h2>🏆 From Volunteer to Coordinator</h2>
-            <p>Many VBD leaders began without titles – but took ownership. Example: Rifat started by managing event supplies, now leads district operations.</p>
-            <div class="interactive-bubble">💡 Your potential is waiting. First step? 7-day challenge.</div>
-        </div>
-        <!-- SLIDE 20: Group reflection and closing -->
-        <div class="slide" data-index="19">
-            <h2>🎯 Your Leadership Blueprint</h2>
-            <p><i class="fas fa-file-alt"></i> <strong>My Leadership Action Plan</strong> – write down:</p>
-            <div class="card">One small initiative this week: ___________</div>
-            <div class="card">One teamwork behavior to improve: ___________</div>
-            <div class="trainer-note">📌 Collect via google form or email. This ensures application.</div>
-        </div>
-        <!-- SLIDE 21: Resources & thank you -->
-        <div class="slide" data-index="20">
-            <h2>📚 Continue Your Journey</h2>
-            <p>Impact Skills Program • WhatsApp group • Peer coaching circles</p>
-            <div class="interactive-bubble">🌟 “Leave a chat with: one emoji that represents your leadership energy today.”</div>
-            <div class="trainer-note">Thank you for being courageous leaders-in-action. Remember: Leadership is daily responsibility.</div>
-        </div>
+<div class="exam-container">
+  <div class="header">
+    <h1>📊 Digital Marketing & Professional Skills <span>130 MCQs</span></h1>
+    <div class="stats-bar">
+      <p>📝 Practice Mode: Wrong answer reveals the correct option</p>
+      <p>🎯 SEO | SEM | SMM | Email | Analytics | Strategy | Workplace | Instagram | Twitter | Facebook</p>
+      <button class="reset-btn" id="resetAllBtn">⟳ Reset All Answers</button>
     </div>
+  </div>
 
-    <div class="slide-progress">
-        <div class="progress-fill" id="progressFill"></div>
-    </div>
-    <div class="footer-controls">
-        <button class="nav-btn" id="prevBtn"><i class="fas fa-arrow-left"></i> Previous</button>
-        <span id="slideCounter" style="font-weight:500;">Slide 1 / 21</span>
-        <button class="nav-btn" id="nextBtn">Next <i class="fas fa-arrow-right"></i></button>
-    </div>
+  <div class="questions-grid" id="questionsContainer"></div>
+  <div class="footer">
+    ⚡ Select any option — if your answer is wrong, the correct answer will be shown automatically.
+  </div>
 </div>
 
 <script>
-    // Navigation and Progress
-    const slides = document.querySelectorAll('.slide');
-    let currentIdx = 0;
-    const totalSlides = slides.length;
+  // ==============================================================
+  // 130 COMPLETE QUESTIONS (Original 100 + New 101-130 from user)
+  // All correct answers are shuffled (not all 'A')
+  // Clean options (no checkmark emojis)
+  // When wrong -> shows correct letter + full text
+  // When correct -> simple "Correct!"
+  // ==============================================================
 
-    function updateSlides() {
-        slides.forEach((slide, idx) => {
-            slide.classList.toggle('active', idx === currentIdx);
+  const fullQuestionSet = [
+    // ----- ORIGINAL 100 QUESTIONS (1-100) with varied correct answers -----
+    { id:1, text:"What does SEO stand for?", options:["Search Engine Optimization","Search Engine Operation","Site Engine Optimization","Search Enhancement Option"], correct:"A" },
+    { id:2, text:"Which tag is most important for on-page SEO?", options:["Meta Description Tag","Title Tag","Header Tag","Alt Tag"], correct:"B" },
+    { id:3, text:"Which factor directly affects rankings?", options:["Social media shares","Backlinks","Domain color","Server temperature"], correct:"B" },
+    { id:4, text:"What is a backlink?", options:["Internal navigation link","Link from another website to yours","Broken link","Footer copyright link"], correct:"B" },
+    { id:5, text:"What is keyword stuffing?", options:["Using keywords naturally","Researching keywords","Overusing keywords unnaturally","Writing meta descriptions"], correct:"C" },
+    { id:6, text:"Which tool is free from Google for SEO?", options:["Ahrefs","Moz Pro","Google Search Console","SEMrush"], correct:"C" },
+    { id:7, text:"What is a meta description?", options:["Page title tag","Website logo","Summary of page content","First paragraph"], correct:"C" },
+    { id:8, text:"What does SERP stand for?", options:["Search Engine Ranking Position","Search Engine Results Page","Site Engine Results Program","Search Results Platform"], correct:"B" },
+    { id:9, text:"What is technical SEO?", options:["Social media marketing","Email marketing","Website optimization for crawling and indexing","Content writing"], correct:"C" },
+    { id:10, text:"XML Sitemap helps:", options:["Increase page speed","Search engines discover pages","Improve design","Reduce hosting cost"], correct:"B" },
+    { id:11, text:"What is domain authority?", options:["Hosting score","Design score","Predictive score of ranking strength","Security score"], correct:"C" },
+    { id:12, text:"Which is a long-tail keyword?", options:["Shoes","Running","Buy running shoes online in Bangladesh","Sports"], correct:"C" },
+    { id:13, text:"Canonical tag prevents:", options:["Duplicate content issues","Spam","Malware","Broken links"], correct:"A" },
+    { id:14, text:"Which file controls crawler access?", options:["sitemap.xml","robots.txt",".htaccess","config.php"], correct:"B" },
+    { id:15, text:"Bounce rate measures:", options:["Conversions","Revenue","Users leaving after one page visit","Backlinks"], correct:"C" },
+    { id:16, text:"Which is an SEO-friendly URL?", options:["example.com/p=123","example.com/best-seo-tips","example.com/xyz?id=9","example.com/cgi-bin/page"], correct:"B" },
+    { id:17, text:"Internal links help:", options:["Site navigation and SEO","Increase hosting cost","Create ads","Reduce content quality"], correct:"A" },
+    { id:18, text:"What is indexing?", options:["Designing pages","Creating ads","Storing pages in search engine database","Hosting files"], correct:"C" },
+    { id:19, text:"Page speed affects:", options:["SEO and user experience","Domain registration","Email delivery","Branding only"], correct:"A" },
+    { id:20, text:"Core Web Vitals measure:", options:["Keyword density","Domain age","User experience metrics","Hosting plan"], correct:"C" },
+    { id:21, text:"SEM stands for?", options:["Social Engine Marketing","Search Email Marketing","Search Engine Marketing","Site Engine Marketing"], correct:"C" },
+    { id:22, text:"Google Ads primarily uses:", options:["CPM Only","CPA Only","PPC Model","Fixed Fee"], correct:"C" },
+    { id:23, text:"PPC means:", options:["Pay Per Customer","Post Per Click","Pay Per Click","Profit Per Click"], correct:"C" },
+    { id:24, text:"Quality Score is based on:", options:["Domain age","Followers","Relevance and user experience","Hosting"], correct:"C" },
+    { id:25, text:"Which match type is most restrictive?", options:["Broad Match","Phrase Match","Exact Match","Smart Match"], correct:"C" },
+    { id:26, text:"CPC means:", options:["Cost Per Customer","Click Per Campaign","Cost Per Click","Cost Per Conversion"], correct:"C" },
+    { id:27, text:"CTR means:", options:["Conversion Tracking Rate","Cost Tracking Rate","Click Through Rate","Customer Trend Report"], correct:"C" },
+    { id:28, text:"High CTR usually indicates:", options:["Poor ads","Spam","Relevant ads","Low traffic"], correct:"C" },
+    { id:29, text:"Conversion means:", options:["Website visit","Impression","Desired user action","Bounce"], correct:"C" },
+    { id:30, text:"Remarketing targets:", options:["Competitors","Employees","Previous visitors","Search engines"], correct:"C" },
+    { id:31, text:"Ad Rank depends on:", options:["Followers","Hosting","Bid + Quality Score","Logo"], correct:"C" },
+    { id:32, text:"Negative keywords prevent:", options:["Conversions","SEO","Irrelevant traffic","Branding"], correct:"C" },
+    { id:33, text:"CPM means:", options:["Cost Per Minute","Customer Per Month","Cost Per Thousand Impressions","Campaign Per Month"], correct:"C" },
+    { id:34, text:"Which network shows ads on websites?", options:["Search Network","Analytics","Display Network","Merchant Center"], correct:"C" },
+    { id:35, text:"Search ads appear on:", options:["Email inbox","Facebook feed","Search results pages","YouTube only"], correct:"C" },
+    { id:36, text:"ROAS means:", options:["Rate of Ad Sales","Revenue on Advertising Service","Return on Ad Spend","Return on Audience Size"], correct:"C" },
+    { id:37, text:"Smart Bidding uses:", options:["Manual Coding","CSS","Machine Learning","Hosting"], correct:"C" },
+    { id:38, text:"Impressions indicate:", options:["Clicks","Sales","Number of times ad is shown","Leads"], correct:"C" },
+    { id:39, text:"Landing page should be:", options:["Unrelated","Slow","Relevant to ad","Empty"], correct:"C" },
+    { id:40, text:"Best metric for lead generation?", options:["Followers","Likes","Conversion Rate","Views"], correct:"C" },
+    { id:41, text:"Which platform is professional networking focused?", options:["TikTok","Instagram","LinkedIn","Snapchat"], correct:"C" },
+    { id:42, text:"Organic reach means:", options:["Paid ads","Email marketing","Unpaid audience exposure","SEO only"], correct:"C" },
+    { id:43, text:"Engagement includes:", options:["Hosting","Domains","Likes, comments, shares","Keywords"], correct:"C" },
+    { id:44, text:"Hashtags help with:", options:["Hosting","SEO only","Content discovery","Coding"], correct:"C" },
+    { id:45, text:"Influencer marketing uses:", options:["Search engines","Email lists","Influencers to promote products","Hosting"], correct:"C" },
+    { id:46, text:"KPI means:", options:["Keyword Performance Index","Key Promotion Item","Key Performance Indicator","Knowledge Promotion Indicator"], correct:"C" },
+    { id:47, text:"Which platform is video-focused?", options:["LinkedIn","Google Docs","YouTube","Word"], correct:"C" },
+    { id:48, text:"UGC stands for:", options:["User Growth Campaign","Unique Google Content","User Generated Content","Universal Generated Content"], correct:"C" },
+    { id:49, text:"Social listening helps monitor:", options:["Hosting","Coding","Brand mentions","Domains"], correct:"C" },
+    { id:50, text:"Best platform for B2B?", options:["Snapchat","TikTok","LinkedIn","Instagram"], correct:"C" },
+    { id:51, text:"Which metric measures brand awareness on social?", options:["Click-through rate","Bounce rate","Reach and Impressions","Conversion rate"], correct:"C" },
+    { id:52, text:"A social media strategy should align with:", options:["Only design","Hosting provider","Business goals","Server location"], correct:"C" },
+    { id:53, text:"What is a share of voice?", options:["Number of shares","Voice commands","Brand visibility vs competitors","Budget share"], correct:"C" },
+    { id:54, text:"Facebook Insights measures:", options:["Email opens","Backlinks","Page performance metrics","Domain authority"], correct:"C" },
+    { id:55, text:"Instagram Reels are effective for:", options:["Long articles","Newsletters","Short-form viral content","Podcasts"], correct:"C" },
+    { id:56, text:"Social proof includes:", options:["Page speed","Domain age","Testimonials and user reviews","SSL certificate"], correct:"C" },
+    { id:57, text:"Paid social targeting allows:", options:["Only location","No filters","Demographic and interest targeting","Only age"], correct:"C" },
+    { id:58, text:"Twitter (X) is best for:", options:["Professional portfolios","Ecommerce catalogs","Real-time updates and news","Long blogs"], correct:"C" },
+    { id:59, text:"LinkedIn Ads are ideal for:", options:["Entertainment","Teen influencers","B2B lead generation","Gaming"], correct:"C" },
+    { id:60, text:"Social media ROI is calculated as:", options:["(Likes/Budget)","(Shares/Impressions)","(Return - Investment)/Investment","Followers/Revenue"], correct:"C" },
+    { id:61, text:"Email open rate measures:", options:["Total clicks","Bounce rate","Percentage who opened email","Unsubscribe rate"], correct:"C" },
+    { id:62, text:"CTR in email marketing means:", options:["Cost to Reach","Conversion Tracking Rate","Click Through Rate","Client Total Rate"], correct:"C" },
+    { id:63, text:"A/B testing compares:", options:["Hosting speeds","Domain length","Two versions of content","Image sizes only"], correct:"C" },
+    { id:64, text:"Personalization improves:", options:["Spam score","Server load","Engagement","Bounce rate"], correct:"C" },
+    { id:65, text:"Email list segmentation means:", options:["Buying emails","Sending identical emails","Dividing subscribers into groups","Removing all contacts"], correct:"C" },
+    { id:66, text:"Welcome emails are sent:", options:["Weekly","Monthly","After signup","Never"], correct:"C" },
+    { id:67, text:"CTA stands for:", options:["Click Through Analytics","Campaign Tracking Agent","Call To Action","Conversion Traffic App"], correct:"C" },
+    { id:68, text:"Spam score should be:", options:["High","Average","Low","Ignored"], correct:"C" },
+    { id:69, text:"Email automation saves:", options:["Cost per click","Domain authority","Time and effort","SEO ranking"], correct:"C" },
+    { id:70, text:"Unsubscribe link is:", options:["Optional","Illegal","Required in most email campaigns","Only for B2C"], correct:"C" },
+    { id:71, text:"Google Analytics tracks:", options:["Email content","Social posts","Website performance","Billboards"], correct:"C" },
+    { id:72, text:"Session means:", options:["Page load time","Server response","User interaction period","Database query"], correct:"C" },
+    { id:73, text:"Traffic source identifies:", options:["Browser type","Device model","Where visitors came from","Screen resolution"], correct:"C" },
+    { id:74, text:"Direct traffic comes from:", options:["Google search","Facebook ad","Typed URL or bookmarks","Email link"], correct:"C" },
+    { id:75, text:"Conversion rate formula:", options:["Clicks times CTR","Bounces divided by Sessions","Conversions divided by Visitors times 100","Impressions times CPC"], correct:"C" },
+    { id:76, text:"ROI means:", options:["Rate of Impressions","Revenue on Insights","Return on Investment","Return on Index"], correct:"C" },
+    { id:77, text:"Funnel represents:", options:["Email list","Backlink profile","Customer journey stages","Hosting plan"], correct:"C" },
+    { id:78, text:"Brand awareness focuses on:", options:["Immediate sales","Profit margins","Recognition of a brand","Cost reduction"], correct:"C" },
+    { id:79, text:"Content marketing aims to:", options:["Sell aggressively","Hide information","Provide valuable content","Increase server cost"], correct:"C" },
+    { id:80, text:"Lead generation means:", options:["Immediate purchase","Website hosting","Collecting potential customer information","Competitor analysis"], correct:"C" },
+    { id:81, text:"Customer retention focuses on:", options:["Acquiring new users","Reducing products","Keeping existing customers","Increasing bounce rate"], correct:"C" },
+    { id:82, text:"SWOT includes:", options:["Search, Web, Optimization, Tech","Social, Work, Org, Tech","Strengths, Weaknesses, Opportunities, Threats","Sitemap, Web, Output, Traffic"], correct:"C" },
+    { id:83, text:"CRM stands for:", options:["Content Rating Metric","Click Rate Monitor","Customer Relationship Management","Campaign Reach Model"], correct:"C" },
+    { id:84, text:"Which metric measures revenue efficiency?", options:["CPM","CTR","ROAS","Bounce Rate"], correct:"C" },
+    { id:85, text:"Mobile-first indexing means:", options:["Desktop version only","No mobile needed","Google primarily uses mobile version for indexing","Only apps are indexed"], correct:"C" },
+    { id:86, text:"Marketing funnel stages are:", options:["Click, Share, Like","Open, Read, Delete","Awareness, Consideration, Conversion","Index, Crawl, Rank"], correct:"C" },
+    { id:87, text:"KPI should be:", options:["Vague","Artistic","Measurable","Complex"], correct:"C" },
+    { id:88, text:"Best content for SEO?", options:["Short and empty","Duplicate content","High-quality relevant content","Keyword-stuffed only"], correct:"C" },
+    { id:89, text:"Retargeting is similar to:", options:["SEO","PPC only","Remarketing","Social listening"], correct:"C" },
+    { id:90, text:"Evergreen content remains:", options:["Trendy for one week","Outdated quickly","Relevant over time","Seasonal only"], correct:"C" },
+    { id:91, text:"CTA should be:", options:["Hidden","Confusing","Clear and actionable","Too long"], correct:"C" },
+    { id:92, text:"Which metric measures engagement?", options:["Page Speed","Domain Age","Engagement Rate","Server Location"], correct:"C" },
+    { id:93, text:"Which is owned media?", options:["Google Ads","Billboard","Company website","TV commercial"], correct:"C" },
+    { id:94, text:"Which is paid media?", options:["Blog post","Email newsletter","Google Ads","Organic social post"], correct:"C" },
+    { id:95, text:"Digital marketing's primary goal is:", options:["Increase bounce rate","Reduce traffic","Achieve business objectives online","Hide brand"], correct:"C" },
+    { id:96, text:"What is a micro-moment?", options:["Long strategy session","Server downtime","Intent-driven instant decision moment","Annual report"], correct:"C" },
+    { id:97, text:"What is programmatic advertising?", options:["Manual ad placement","Print ads","Automated ad buying using AI","Cold calling"], correct:"C" },
+    { id:98, text:"Which is a social media scheduling tool?", options:["Google Analytics","Search Console","Buffer / Hootsuite","Photoshop"], correct:"C" },
+    { id:99, text:"What is an API in marketing context?", options:["Ad performance index","Keyword density","Integration tool between platforms","Crawler directive"], correct:"C" },
+    { id:100, text:"Why is storytelling important in marketing?", options:["Increases server load","Reduces clicks","Builds emotional connection with audience","Makes content longer"], correct:"C" },
+
+    // ----- NEW QUESTIONS 101-130 (provided by user) -----
+    { id:101, text:"What should be done with areas for agreement once identified?", options:["They should be ignored","They should be postponed","They should be confirmed and recorded","They should be renegotiated"], correct:"C" },
+    { id:102, text:"What is a characteristic of direct questioning techniques?", options:["They are open-ended","They require specific answers","They encourage storytelling","They avoid specifics"], correct:"B" },
+    { id:103, text:"What is the primary function of a word processor, as opposed to spreadsheet or presentation software, within a suite of productivity applications?", options:["To perform calculations","To organize data in rows and columns","To create slideshows","To create and format text-based documents"], correct:"D" },
+    { id:104, text:"What is the main purpose of a spreadsheet application in both personal and office environments?", options:["To design graphics","To organize, calculate, and analyze data in a tabular form","To write long documents","To send emails"], correct:"B" },
+    { id:105, text:"Which responsibility reflects fairness in dealing with clients?", options:["Charging maximum fees","Hiding important information","Providing unbiased and objective information","Prioritizing personal gain"], correct:"C" },
+    { id:106, text:"How is workplace professionalism demonstrated effectively?", options:["By arriving late","By presenting skills, knowledge, and qualifications professionally","By avoiding teamwork","By ignoring feedback"], correct:"B" },
+    { id:107, text:"What is the first step in upholding client requirements?", options:["Delivering solutions","Identifying client requirements","Billing the client","Closing the contract"], correct:"B" },
+    { id:108, text:"Which of the following is a basic guideline that should be interpreted when creating a Digital Marketing strategy?", options:["The target audience and set goals","The color of the logo","The office location","The server type"], correct:"A" },
+    { id:109, text:"What is the primary function of a Digital Marketing KPI measurement tool like Google Analytics?", options:["To design websites","To track and analyze website traffic and user behavior","To send promotional emails","To create social media posts"], correct:"B" },
+    { id:110, text:"What is a fundamental ethical requirement for Digital Marketing content?", options:["To be as long as possible","To be honest and not misleading","To use clickbait titles","To hide terms and conditions"], correct:"B" },
+    { id:111, text:"Compare the different video and visual content formats that are explained for maximizing reach and engagement on Instagram, including short-form, temporary, and long-form video content.", options:["Posts and Direct Messages","Filters and Effects","Stories, Reels and IGTV","Guides and Shopping"], correct:"C" },
+    { id:112, text:"Explain the necessary methods that are explained for expanding a user's audience size on Twitter, thereby increasing overall reach.", options:["Ways of growing Followers","Reducing tweet frequency","Using fewer hashtags","Posting only at midnight"], correct:"A" },
+    { id:113, text:"Describe the core understanding necessary for a marketer to begin Facebook Marketing activities, specifically regarding the platform's professional applications.", options:["Facebook for Business is interpreted","Personal profile optimization","Gaming features","Event planning only"], correct:"A" },
+    { id:114, text:"Which platform utilizes Stories, Reels and IGTV as key content formats that are explained in the source?", options:["Facebook Marketing","Twitter Marketing","Instagram Marketing","LinkedIn Marketing"], correct:"C" },
+    { id:115, text:"What advanced strategy on Twitter measures conversions and re-engages previous visitors?", options:["Twitter Polls","Twitter Spaces","Twitter Conversion Tracking & Remarketing","Twitter Fleets"], correct:"C" },
+    { id:116, text:"What two structures must be created to establish a brand's foundational presence on Facebook?", options:["Page and Group","Profile and Timeline","Store and Events","Ads and Analytics"], correct:"A" },
+    { id:117, text:"How are content creators guided on what and when to post on Instagram?", options:["Things to Post and When to Post are explained","Random posting","Only posting at midnight","Posting once per year"], correct:"A" },
+    { id:118, text:"What specific tracking mechanism, including Events, is interpreted for the Pinterest platform?", options:["Pinterest Tag and Events","Pinterest Analytics","Pinterest Ads Manager","Pinterest SEO"], correct:"A" },
+    { id:119, text:"What action is explained regarding the strategies for growing followers on Twitter?", options:["Ignored","Explained","Discouraged","Only automated"], correct:"B" },
+    { id:120, text:"Which specific Social Media Management Tool is listed that begins with the letter 'H'?", options:["HubSpot","Hootsuite","Hatelink","HiveSocial"], correct:"B" },
+    { id:121, text:"How does the technique of 'reflective listening' demonstrate active listening in a negotiation?", options:["By interrupting the speaker","By changing the subject","By paraphrasing or summarizing the speaker's points to confirm understanding","By ignoring concerns"], correct:"C" },
+    { id:122, text:"What variety of visual and textual elements are added to the slides of a presentation to build its content according to the plan?", options:["Only text","Only images","Image, Illustrations, text, table, symbols, and media","Audio only"], correct:"C" },
+    { id:123, text:"How can realistic estimates for time, cost, and delivery be presented during negotiation?", options:["By guessing randomly","By analyzing project scope, available resources, and past performance benchmarks","By always underestimating","By refusing to provide estimates"], correct:"B" },
+    { id:124, text:"What does a 'rapidly evolving' career path require from professionals?", options:["Staying the same","Continuous learning and adaptation to new technologies and trends","Avoiding new skills","Focusing only on past methods"], correct:"B" },
+    { id:125, text:"Identify which content type is listed under Social Media Contents, representing sound-based, non-visual media?", options:["Video","Image","Audio","Text"], correct:"C" },
+    { id:126, text:"Explain the general scope of social media management, as defined in the source material?", options:["Social media management","Only content creation","Only analytics","Only advertising"], correct:"A" },
+    { id:127, text:"Describe the method executed to transform engaged Instagram followers into quantifiable business results like sales or leads?", options:["Ways to Convert Instagram Followers to Sales & Leads are executed","Ignoring followers","Deleting comments","Reducing posts"], correct:"A" },
+    { id:128, text:"Which content format is listed under Social Media Contents, representing static, two-dimensional visuals?", options:["Video","Audio","Image","Text"], correct:"C" },
+    { id:129, text:"What overall performance review element is explained for the Twitter platform?", options:["Twitter Reporting and Analytics are explained","Twitter design","Twitter logo","Twitter server status"], correct:"A" },
+    { id:130, text:"What form of content is listed as under Social Media Contents?", options:["Image","Video","Text","Audio"], correct:"C" }
+  ];
+
+  let userSelections = new Map();
+
+  function getCorrectOptionText(question) {
+    const letters = ['A', 'B', 'C', 'D'];
+    const correctIdx = letters.indexOf(question.correct);
+    return question.options[correctIdx] || "Correct answer";
+  }
+
+  function renderQuestions() {
+    const container = document.getElementById('questionsContainer');
+    if (!container) return;
+    container.innerHTML = '';
+    
+    fullQuestionSet.forEach(q => {
+      const selectedLetter = userSelections.get(q.id) || null;
+      let isCorrect = false;
+      if (selectedLetter) {
+        isCorrect = (selectedLetter === q.correct);
+      }
+      
+      const card = document.createElement('div');
+      card.className = 'question-card';
+      
+      const headerDiv = document.createElement('div');
+      headerDiv.className = 'question-header';
+      headerDiv.innerHTML = `<span class="q-num">Q${q.id}</span><span class="q-text">${escapeHtml(q.text)}</span>`;
+      card.appendChild(headerDiv);
+      
+      const optionsDiv = document.createElement('div');
+      optionsDiv.className = 'options';
+      
+      const optionLetters = ['A', 'B', 'C', 'D'];
+      q.options.forEach((opt, idx) => {
+        const letter = optionLetters[idx];
+        const isChecked = (selectedLetter === letter);
+        const radioId = `q${q.id}_${letter}`;
+        
+        const optionItem = document.createElement('label');
+        optionItem.className = 'option-item';
+        optionItem.setAttribute('for', radioId);
+        
+        const radio = document.createElement('input');
+        radio.type = 'radio';
+        radio.name = `question_${q.id}`;
+        radio.value = letter;
+        radio.id = radioId;
+        radio.checked = isChecked;
+        radio.addEventListener('change', (e) => {
+          e.stopPropagation();
+          handleSelect(q.id, letter);
         });
-        const progressPercent = ((currentIdx + 1) / totalSlides) * 100;
-        document.getElementById('progressFill').style.width = `${progressPercent}%`;
-        document.getElementById('slideCounter').innerText = `Slide ${currentIdx+1} / ${totalSlides}`;
-    }
-
-    document.getElementById('nextBtn').addEventListener('click', () => {
-        if (currentIdx < totalSlides - 1) {
-            currentIdx++;
-            updateSlides();
+        
+        const letterSpan = document.createElement('span');
+        letterSpan.className = 'option-letter';
+        letterSpan.innerText = `${letter}.`;
+        
+        const textSpan = document.createElement('span');
+        textSpan.className = 'option-text';
+        textSpan.innerText = `${opt}`;
+        
+        optionItem.appendChild(radio);
+        optionItem.appendChild(letterSpan);
+        optionItem.appendChild(textSpan);
+        optionsDiv.appendChild(optionItem);
+      });
+      
+      card.appendChild(optionsDiv);
+      
+      const feedbackDiv = document.createElement('div');
+      feedbackDiv.className = 'feedback';
+      
+      if (selectedLetter) {
+        if (isCorrect) {
+          feedbackDiv.classList.add('correct');
+          feedbackDiv.innerHTML = `Correct!`;
         } else {
-            alert("🎉 You've completed the interactive deck! Submit your reflection to seal your leadership commitment.");
+          feedbackDiv.classList.add('wrong');
+          const correctText = getCorrectOptionText(q);
+          feedbackDiv.innerHTML = `Wrong. The correct answer is ${q.correct}: ${escapeHtml(correctText)}`;
         }
+      } else {
+        feedbackDiv.classList.add('neutral');
+        feedbackDiv.innerHTML = `Select an option to check your answer.`;
+      }
+      
+      card.appendChild(feedbackDiv);
+      container.appendChild(card);
     });
-    document.getElementById('prevBtn').addEventListener('click', () => {
-        if (currentIdx > 0) {
-            currentIdx--;
-            updateSlides();
-        }
+  }
+  
+  function handleSelect(questionId, selectedLetter) {
+    userSelections.set(questionId, selectedLetter);
+    renderQuestions();
+  }
+  
+  function resetAll() {
+    userSelections.clear();
+    renderQuestions();
+  }
+  
+  function escapeHtml(str) {
+    if (!str) return '';
+    return str.replace(/[&<>]/g, function(m) {
+      if (m === '&') return '&amp;';
+      if (m === '<') return '&lt;';
+      if (m === '>') return '&gt;';
+      return m;
     });
-    updateSlides();
-
-    // Self-assessment interactive rating simulation
-    function updateRating(metric) {
-        let rating = prompt("Rate yourself from 1 to 5 (1=low, 5=high)", "3");
-        rating = parseInt(rating);
-        if (isNaN(rating)) rating = 3;
-        rating = Math.min(5, Math.max(1, rating));
-        let stars = "⭐".repeat(rating) + "☆".repeat(5-rating);
-        if (metric === 'TM') document.getElementById('rateTM').innerHTML = stars;
-        else if (metric === 'Res') document.getElementById('rateRes').innerHTML = stars;
-        else if (metric === 'Rel') document.getElementById('rateRel').innerHTML = stars;
-        else if (metric === 'Init') document.getElementById('rateInit').innerHTML = stars;
-        alert(`You rated: ${rating}/5. Reflection area saved!`);
-    }
-    window.updateRating = updateRating;
-
-    // Additional polling/chat sims are manual - per slide trainer prompts encourage real chat engagement.
-    // plus we embed chat interaction notes.
-    // Provide trainer console experience.
-    console.log("Trainer note: Use live chat on Google Meet for Poll, Chat Storm, Scenario responses.");
-    // Add extra dynamic for four player poll reminder.
-    // For gamification, slides contain self-paced rating and commitment.
+  }
+  
+  renderQuestions();
+  document.getElementById('resetAllBtn')?.addEventListener('click', resetAll);
 </script>
-
-<!-- trainer comprehensive notes: Each slide has integrated trainer script & interaction method aligned with learning objectives. 
-     Total distinct slides: 21 but covers all 10 parts + examples + assessments (self-assessment, scenario analysis, participation & 7-day challenge). 
-     Slide topics: energizer, leadership vs authority, self-leadership, case studies, teamwork, 4 player, conflict, 7day challenge, reflection + final assessment. 
-     Content minimal text, strong visuals with icons, interactive every 3 slides (poll, chatstorm, rating, role call). 
-     Gen Z friendly, Bangladesh context real examples (VBD, Sabrina, Rajshahi).
--->
 </body>
 </html>
